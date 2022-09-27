@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
+                <outlet property="homeViewTopLabel" destination="2KQ-QZ-WP0" id="Ukp-CG-SZs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +19,48 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWz-kJ-RVX">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fsm-67-XL4">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KQ-QZ-WP0">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="qbH-OY-2iW"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="2KQ-QZ-WP0" firstAttribute="top" secondItem="Fsm-67-XL4" secondAttribute="top" id="SBP-ti-ENt"/>
+                                <constraint firstItem="2KQ-QZ-WP0" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="a9m-1q-fxR"/>
+                                <constraint firstAttribute="trailing" secondItem="2KQ-QZ-WP0" secondAttribute="trailing" id="vTF-tN-exw"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Fsm-67-XL4" firstAttribute="leading" secondItem="uWz-kJ-RVX" secondAttribute="leading" id="1zk-7k-ew5"/>
+                        <constraint firstAttribute="bottom" secondItem="Fsm-67-XL4" secondAttribute="bottom" id="5tz-TI-HOA"/>
+                        <constraint firstItem="Fsm-67-XL4" firstAttribute="top" secondItem="uWz-kJ-RVX" secondAttribute="top" id="AQc-NQ-xy1"/>
+                        <constraint firstAttribute="trailing" secondItem="Fsm-67-XL4" secondAttribute="trailing" id="YkE-wA-Dis"/>
+                        <constraint firstItem="Fsm-67-XL4" firstAttribute="width" secondItem="uWz-kJ-RVX" secondAttribute="width" id="oFx-Lf-Wm7"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="uWz-kJ-RVX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4FX-F6-aBC"/>
+                <constraint firstItem="uWz-kJ-RVX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="DUU-Hg-WOv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uWz-kJ-RVX" secondAttribute="trailing" id="Yfl-FU-taC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uWz-kJ-RVX" secondAttribute="bottom" id="uU5-uW-VzI"/>
+                <constraint firstItem="uWz-kJ-RVX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zBV-HE-Kgy"/>
+            </constraints>
             <point key="canvasLocation" x="88" y="-11"/>
         </view>
     </objects>

@@ -9,4 +9,5 @@ import UIKit
 
 struct ColorConstants {
     static var homeViewBackground = UIColor(hexString: "#4D648D")
+    static var homeViewContainersColor = UIColor(hexString: "#283655")
 }
