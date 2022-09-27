@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
                 <outlet property="homeViewTopLabel" destination="2KQ-QZ-WP0" id="MoZ-Iw-4pw"/>
+                <outlet property="mainContainerView" destination="08c-zr-K0d" id="QyF-Gx-kJF"/>
                 <outlet property="segmentedControlOutlet" destination="APG-B4-5HM" id="Hzl-UV-TNv"/>
                 <outlet property="segmentedControlViewContainer" destination="7yV-Oh-fdk" id="yRj-eu-6SM"/>
                 <outlet property="topLabelViewContainer" destination="G0p-TW-azv" id="wZc-Tl-5n7"/>
@@ -48,7 +49,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yV-Oh-fdk" userLabel="Segmented Control View">
-                            <rect key="frame" x="0.0" y="70" width="390" height="693"/>
+                            <rect key="frame" x="0.0" y="70" width="390" height="50"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="APG-B4-5HM">
                                     <rect key="frame" x="95" y="0.0" width="200" height="51"/>
@@ -60,20 +61,31 @@
                                         <segment title="First"/>
                                         <segment title="Second"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="RsN-HZ-ZB5"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="APG-B4-5HM" firstAttribute="top" secondItem="7yV-Oh-fdk" secondAttribute="top" id="6GU-4q-8EE"/>
                                 <constraint firstItem="APG-B4-5HM" firstAttribute="centerX" secondItem="7yV-Oh-fdk" secondAttribute="centerX" id="kvs-VE-veC"/>
+                                <constraint firstItem="APG-B4-5HM" firstAttribute="height" secondItem="7yV-Oh-fdk" secondAttribute="height" id="mh2-rn-Llw"/>
                             </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08c-zr-K0d" userLabel="Main Container">
+                            <rect key="frame" x="0.0" y="140" width="390" height="623"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="08c-zr-K0d" secondAttribute="bottom" id="BnD-yq-n0w"/>
                         <constraint firstItem="7yV-Oh-fdk" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="BvS-uF-fdd"/>
                         <constraint firstAttribute="trailing" secondItem="7yV-Oh-fdk" secondAttribute="trailing" id="G4k-Sm-0Dk"/>
                         <constraint firstItem="G0p-TW-azv" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="GxZ-3V-vyR"/>
                         <constraint firstAttribute="trailing" secondItem="G0p-TW-azv" secondAttribute="trailing" id="Njr-Fn-y7T"/>
+                        <constraint firstItem="08c-zr-K0d" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="Zja-hj-3G2"/>
+                        <constraint firstAttribute="trailing" secondItem="08c-zr-K0d" secondAttribute="trailing" id="uSc-px-LcM"/>
                         <constraint firstItem="G0p-TW-azv" firstAttribute="top" secondItem="Fsm-67-XL4" secondAttribute="top" id="zUS-qB-Yc5"/>
                     </constraints>
                 </stackView>
@@ -86,7 +98,7 @@
                 <constraint firstItem="Fsm-67-XL4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="h5W-R9-mmu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fsm-67-XL4" secondAttribute="bottom" id="hwv-2x-DR9"/>
             </constraints>
-            <point key="canvasLocation" x="88" y="-11"/>
+            <point key="canvasLocation" x="87.692307692307693" y="-11.374407582938389"/>
         </view>
     </objects>
     <resources>

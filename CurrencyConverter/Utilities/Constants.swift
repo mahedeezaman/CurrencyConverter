@@ -8,5 +8,5 @@
 import Foundation
 
 struct Constants {
-    static var cornerRadius: CGFloat = 15
+    static var cornerRadius: CGFloat = 20
 }

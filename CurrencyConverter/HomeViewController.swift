@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var topLabelViewContainer: UIView!
     @IBOutlet weak var segmentedControlViewContainer: UIView!
+    @IBOutlet weak var mainContainerView: UIView!
     
     @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     @IBOutlet weak var homeViewTopLabel: UILabel!
@@ -21,9 +22,17 @@ class HomeViewController: UIViewController {
         view.backgroundColor = ColorConstants.homeViewBackground
         segmentedControlViewContainer.backgroundColor = ColorConstants.homeViewBackground
         topLabelViewContainer.backgroundColor = ColorConstants.homeViewContainersColor
+        mainContainerView.backgroundColor = ColorConstants.homeViewContainersColor
         
         segmentedControlOutlet.setupSegmentedControl()
         
         homeViewTopLabel.textColor = ColorConstants.homeViewTextColors
+        
+        mainContainerView.layer.cornerRadius = Constants.cornerRadius
+        mainContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
     }
 }
