@@ -14,6 +14,8 @@
 		E4647FBF28E0BB530034E14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4647FBE28E0BB530034E14E /* Assets.xcassets */; };
 		E4647FC228E0BB530034E14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4647FC028E0BB530034E14E /* LaunchScreen.storyboard */; };
 		E4647FCD28E0BB530034E14E /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FCC28E0BB530034E14E /* CurrencyConverterTests.swift */; };
+		E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB228E27AFC000A0B75 /* ColorConstants.swift */; };
+		E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB628E27D15000A0B75 /* ColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		E4647FC328E0BB530034E14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4647FC828E0BB530034E14E /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4647FCC28E0BB530034E14E /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
+		E4704FB228E27AFC000A0B75 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		E4704FB628E27D15000A0B75 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		E4647FB428E0BB510034E14E /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				E4704FB528E27D08000A0B75 /* Extensions */,
+				E4704FB428E27CF6000A0B75 /* Utilities */,
 				E4647FB528E0BB510034E14E /* AppDelegate.swift */,
 				E4647FB728E0BB510034E14E /* SceneDelegate.swift */,
 				E422A63528E12F1000CD1582 /* HomeViewController.swift */,
@@ -95,6 +101,22 @@
 				E4647FCC28E0BB530034E14E /* CurrencyConverterTests.swift */,
 			);
 			path = CurrencyConverterTests;
+			sourceTree = "<group>";
+		};
+		E4704FB428E27CF6000A0B75 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E4704FB228E27AFC000A0B75 /* ColorConstants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E4704FB528E27D08000A0B75 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4704FB628E27D15000A0B75 /* ColorExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */,
+				E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */,
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
+				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
