@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
-                <outlet property="homeViewTopLabel" destination="2KQ-QZ-WP0" id="Ukp-CG-SZs"/>
+                <outlet property="homeViewTopLabel" destination="2KQ-QZ-WP0" id="MoZ-Iw-4pw"/>
+                <outlet property="segmentedControlOutlet" destination="APG-B4-5HM" id="Hzl-UV-TNv"/>
+                <outlet property="segmentedControlViewContainer" destination="7yV-Oh-fdk" id="yRj-eu-6SM"/>
+                <outlet property="topLabelViewContainer" destination="G0p-TW-azv" id="wZc-Tl-5n7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,46 +23,68 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWz-kJ-RVX">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fsm-67-XL4" userLabel="Main VStack">
                     <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fsm-67-XL4">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0p-TW-azv" userLabel="Top Label View">
                             <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KQ-QZ-WP0">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KQ-QZ-WP0" userLabel="Currency Converter Label">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="qbH-OY-2iW"/>
+                                        <constraint firstAttribute="height" constant="50" id="m1U-a8-2Is"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="2KQ-QZ-WP0" firstAttribute="top" secondItem="Fsm-67-XL4" secondAttribute="top" id="SBP-ti-ENt"/>
-                                <constraint firstItem="2KQ-QZ-WP0" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="a9m-1q-fxR"/>
-                                <constraint firstAttribute="trailing" secondItem="2KQ-QZ-WP0" secondAttribute="trailing" id="vTF-tN-exw"/>
+                                <constraint firstAttribute="trailing" secondItem="2KQ-QZ-WP0" secondAttribute="trailing" id="0Tt-wd-Egs"/>
+                                <constraint firstItem="2KQ-QZ-WP0" firstAttribute="leading" secondItem="G0p-TW-azv" secondAttribute="leading" id="cQw-4n-pq1"/>
+                                <constraint firstItem="2KQ-QZ-WP0" firstAttribute="top" secondItem="G0p-TW-azv" secondAttribute="top" id="p7Y-lr-xUY"/>
+                                <constraint firstAttribute="bottom" secondItem="2KQ-QZ-WP0" secondAttribute="bottom" id="ve3-nJ-SzK"/>
                             </constraints>
-                        </stackView>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yV-Oh-fdk" userLabel="Segmented Control View">
+                            <rect key="frame" x="0.0" y="70" width="390" height="693"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="APG-B4-5HM">
+                                    <rect key="frame" x="95" y="0.0" width="200" height="51"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="QGO-yu-nbk"/>
+                                        <constraint firstAttribute="height" constant="50" id="fs0-bA-26h"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="First"/>
+                                        <segment title="Second"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="APG-B4-5HM" firstAttribute="top" secondItem="7yV-Oh-fdk" secondAttribute="top" id="6GU-4q-8EE"/>
+                                <constraint firstItem="APG-B4-5HM" firstAttribute="centerX" secondItem="7yV-Oh-fdk" secondAttribute="centerX" id="kvs-VE-veC"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Fsm-67-XL4" firstAttribute="leading" secondItem="uWz-kJ-RVX" secondAttribute="leading" id="1zk-7k-ew5"/>
-                        <constraint firstAttribute="bottom" secondItem="Fsm-67-XL4" secondAttribute="bottom" id="5tz-TI-HOA"/>
-                        <constraint firstItem="Fsm-67-XL4" firstAttribute="top" secondItem="uWz-kJ-RVX" secondAttribute="top" id="AQc-NQ-xy1"/>
-                        <constraint firstAttribute="trailing" secondItem="Fsm-67-XL4" secondAttribute="trailing" id="YkE-wA-Dis"/>
-                        <constraint firstItem="Fsm-67-XL4" firstAttribute="width" secondItem="uWz-kJ-RVX" secondAttribute="width" id="oFx-Lf-Wm7"/>
+                        <constraint firstItem="7yV-Oh-fdk" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="BvS-uF-fdd"/>
+                        <constraint firstAttribute="trailing" secondItem="7yV-Oh-fdk" secondAttribute="trailing" id="G4k-Sm-0Dk"/>
+                        <constraint firstItem="G0p-TW-azv" firstAttribute="leading" secondItem="Fsm-67-XL4" secondAttribute="leading" id="GxZ-3V-vyR"/>
+                        <constraint firstAttribute="trailing" secondItem="G0p-TW-azv" secondAttribute="trailing" id="Njr-Fn-y7T"/>
+                        <constraint firstItem="G0p-TW-azv" firstAttribute="top" secondItem="Fsm-67-XL4" secondAttribute="top" id="zUS-qB-Yc5"/>
                     </constraints>
-                </scrollView>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="uWz-kJ-RVX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4FX-F6-aBC"/>
-                <constraint firstItem="uWz-kJ-RVX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="DUU-Hg-WOv"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uWz-kJ-RVX" secondAttribute="trailing" id="Yfl-FU-taC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uWz-kJ-RVX" secondAttribute="bottom" id="uU5-uW-VzI"/>
-                <constraint firstItem="uWz-kJ-RVX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zBV-HE-Kgy"/>
+                <constraint firstItem="Fsm-67-XL4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yhj-Dh-rdJ"/>
+                <constraint firstItem="Fsm-67-XL4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gvk-Od-ivG"/>
+                <constraint firstItem="Fsm-67-XL4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="h5W-R9-mmu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fsm-67-XL4" secondAttribute="bottom" id="hwv-2x-DR9"/>
             </constraints>
             <point key="canvasLocation" x="88" y="-11"/>
         </view>

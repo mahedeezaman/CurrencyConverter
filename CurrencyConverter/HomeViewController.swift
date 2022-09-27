@@ -9,16 +9,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var topLabelViewContainer: UIView!
+    @IBOutlet weak var segmentedControlViewContainer: UIView!
+    
+    @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     @IBOutlet weak var homeViewTopLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = ColorConstants.homeViewBackground
+        segmentedControlViewContainer.backgroundColor = ColorConstants.homeViewBackground
+        topLabelViewContainer.backgroundColor = ColorConstants.homeViewContainersColor
         
-        homeViewTopLabel.textColor = ColorConstants.homeViewContainersColor
-        homeViewTopLabel.layer.cornerRadius = Constants.cornerRadius
-        homeViewTopLabel.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        homeViewTopLabel.layer.borderWidth = 5
+        segmentedControlOutlet.setupSegmentedControl()
+        
+        homeViewTopLabel.textColor = ColorConstants.homeViewTextColors
     }
 }
