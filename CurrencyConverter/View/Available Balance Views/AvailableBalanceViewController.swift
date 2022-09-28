@@ -21,10 +21,14 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
         balanceTableView.backgroundColor = ColorConstants.homeViewContainersColor
         balanceTableView.layer.cornerRadius = Constants.cornerRadius
         balanceTableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        balanceTableView.separatorColor = .clear
+        
+        balanceTableView.allowsSelection = false
         
         balanceTableView.dataSource = self
         balanceTableView.delegate = self
-        balanceTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        balanceTableView.register(UINib(nibName: "AvailableBalanceCellViewController", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,16 +36,22 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AvailableBalanceCellViewController
         let index = dummyData.index(dummyData.startIndex, offsetBy: indexPath.row)
-        cell.backgroundColor = ColorConstants.homeViewBackground
-        cell.textLabel?.text = "\(dummyData.keys[index]) \(dummyData.values[index])"
+        
+        cell.backgroundColor = .clear
+        cell.cellViewContainer.backgroundColor = ColorConstants.homeViewBackground
+        
+        cell.currencyLabel.text = dummyData.keys[index]
+        cell.amountLabel.text = dummyData.values[index]
+        
+        if indexPath.row == 0 {
+            cell.cellViewContainer.layer.cornerRadius = cell.cellViewContainer.frame.height/2
+            cell.cellViewContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        } else if indexPath.row == dummyData.count - 1 {
+            cell.cellViewContainer.layer.cornerRadius = cell.cellViewContainer.frame.height/2
+            cell.cellViewContainer.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        }
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index = dummyData.index(dummyData.startIndex, offsetBy: indexPath.row)
-        dummyData[dummyData.keys[index]] = "Changed"
-        balanceTableView.reloadData()
     }
 }

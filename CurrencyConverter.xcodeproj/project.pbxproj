@@ -11,6 +11,8 @@
 		E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E422A63628E12F1000CD1582 /* HomeViewController.xib */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
 		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
+		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
+		E45D8E8728E3E3FF008C87CC /* AvailableBalanceCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */; };
 		E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB528E0BB510034E14E /* AppDelegate.swift */; };
 		E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB728E0BB510034E14E /* SceneDelegate.swift */; };
 		E4647FBF28E0BB530034E14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4647FBE28E0BB530034E14E /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		E422A63628E12F1000CD1582 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
 		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
+		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
+		E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceCellViewController.xib; sourceTree = "<group>"; };
 		E4647FB228E0BB510034E14E /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4647FB528E0BB510034E14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4647FB728E0BB510034E14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			children = (
 				E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */,
 				E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */,
+				E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */,
+				E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */,
 			);
 			path = "Available Balance Views";
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			files = (
 				E4647FC228E0BB530034E14E /* LaunchScreen.storyboard in Resources */,
 				E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */,
+				E45D8E8728E3E3FF008C87CC /* AvailableBalanceCellViewController.xib in Resources */,
 				E4647FBF28E0BB530034E14E /* Assets.xcassets in Resources */,
 				E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */,
 			);
@@ -249,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */,
 				E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */,
 				E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */,
 				E4FEB58F28E356A70010E7E3 /* UISegmentedControlExtensions.swift in Sources */,

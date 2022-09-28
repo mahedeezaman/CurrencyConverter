@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     let buttonViewController : ButtonViewController = {
         let balanceViewController = ButtonViewController()
-        balanceViewController.view.backgroundColor = ColorConstants.homeViewBackground
+        //balanceViewController.view.backgroundColor = ColorConstants.homeViewBackground
         return balanceViewController
     }()
     
@@ -80,7 +80,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController : ConvertedValue {
     func valueChanged(of currency: String, amount: String) {
         dummyData[currency] = amount
-        balanceViewController.dummyData = dummyData
+        balanceViewController.dummyData[currency] = amount
         balanceViewController.balanceTableView.reloadData()
     }
 }
@@ -88,19 +88,14 @@ extension HomeViewController : ConvertedValue {
 class ButtonViewController: UIViewController {
     weak var delegate : ConvertedValue? = nil
     
-    let button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        button.backgroundColor = .green
-        button.setTitle("Test Button", for: .normal)
-
-        return button
-    }()
-    
     override func viewDidLoad() {
         view.backgroundColor = ColorConstants.homeViewContainersColor
         view.layer.cornerRadius = Constants.cornerRadius
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        let button = UIButton(frame: CGRect(x: view.frame.width/2-50, y: view.frame.height/2-100, width: 100, height: 50))
+        button.backgroundColor = .green
+        button.setTitle("Test Button", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         view.addSubview(button)
     }
