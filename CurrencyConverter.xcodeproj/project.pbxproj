@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422A63528E12F1000CD1582 /* HomeViewController.swift */; };
 		E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E422A63628E12F1000CD1582 /* HomeViewController.xib */; };
+		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
+		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
 		E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB528E0BB510034E14E /* AppDelegate.swift */; };
 		E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB728E0BB510034E14E /* SceneDelegate.swift */; };
 		E4647FBF28E0BB530034E14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4647FBE28E0BB530034E14E /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		E422A63528E12F1000CD1582 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E422A63628E12F1000CD1582 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
+		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
 		E4647FB228E0BB510034E14E /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4647FB528E0BB510034E14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4647FB728E0BB510034E14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E45D8E8228E3CADD008C87CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E422A63528E12F1000CD1582 /* HomeViewController.swift */,
+				E422A63628E12F1000CD1582 /* HomeViewController.xib */,
+				E45D8E8328E3CAE8008C87CC /* Available Balance Views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E45D8E8328E3CAE8008C87CC /* Available Balance Views */ = {
+			isa = PBXGroup;
+			children = (
+				E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */,
+				E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */,
+			);
+			path = "Available Balance Views";
+			sourceTree = "<group>";
+		};
 		E4647FA928E0BB510034E14E = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +111,9 @@
 			children = (
 				E4704FB528E27D08000A0B75 /* Extensions */,
 				E4704FB428E27CF6000A0B75 /* Utilities */,
+				E45D8E8228E3CADD008C87CC /* View */,
 				E4647FB528E0BB510034E14E /* AppDelegate.swift */,
 				E4647FB728E0BB510034E14E /* SceneDelegate.swift */,
-				E422A63528E12F1000CD1582 /* HomeViewController.swift */,
-				E422A63628E12F1000CD1582 /* HomeViewController.xib */,
 				E4647FBE28E0BB530034E14E /* Assets.xcassets */,
 				E4647FC028E0BB530034E14E /* LaunchScreen.storyboard */,
 				E4647FC328E0BB530034E14E /* Info.plist */,
@@ -207,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4647FC228E0BB530034E14E /* LaunchScreen.storyboard in Resources */,
+				E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */,
 				E4647FBF28E0BB530034E14E /* Assets.xcassets in Resources */,
 				E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */,
 			);
@@ -231,6 +254,7 @@
 				E4FEB58F28E356A70010E7E3 /* UISegmentedControlExtensions.swift in Sources */,
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
+				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,
 			);
