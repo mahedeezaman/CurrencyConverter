@@ -52,14 +52,13 @@
                             <rect key="frame" x="0.0" y="70" width="390" height="50"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="APG-B4-5HM">
-                                    <rect key="frame" x="95" y="0.0" width="200" height="51"/>
+                                    <rect key="frame" x="66.666666666666686" y="0.0" width="257" height="51"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="QGO-yu-nbk"/>
                                         <constraint firstAttribute="height" constant="50" id="fs0-bA-26h"/>
                                     </constraints>
                                     <segments>
-                                        <segment title="First"/>
-                                        <segment title="Second"/>
+                                        <segment title="Available Balance"/>
+                                        <segment title="Convert Currency"/>
                                     </segments>
                                     <connections>
                                         <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="RsN-HZ-ZB5"/>
