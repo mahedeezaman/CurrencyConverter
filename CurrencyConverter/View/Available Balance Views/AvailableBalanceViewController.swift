@@ -28,7 +28,7 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
         balanceTableView.dataSource = self
         balanceTableView.delegate = self
         
-        balanceTableView.register(UINib(nibName: "AvailableBalanceCellViewController", bundle: nil), forCellReuseIdentifier: "cell")
+        balanceTableView.registerCell(type: AvailableBalanceCellViewController.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +36,10 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AvailableBalanceCellViewController
+        guard let cell = tableView.dequeueCell(withType: AvailableBalanceCellViewController.self, for: indexPath) else {
+            return UITableViewCell()
+        }
+        
         let index = dummyData.index(dummyData.startIndex, offsetBy: indexPath.row)
         
         cell.backgroundColor = .clear
@@ -52,6 +55,7 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
             cell.cellViewContainer.layer.cornerRadius = cell.cellViewContainer.frame.height/2
             cell.cellViewContainer.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         }
+        
         return cell
     }
 }

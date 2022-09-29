@@ -21,6 +21,7 @@
 		E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB228E27AFC000A0B75 /* ColorConstants.swift */; };
 		E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB628E27D15000A0B75 /* ColorExtensions.swift */; };
 		E4704FB928E280ED000A0B75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB828E280ED000A0B75 /* Constants.swift */; };
+		E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */; };
 		E4FEB58F28E356A70010E7E3 /* UISegmentedControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		E4704FB228E27AFC000A0B75 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		E4704FB628E27D15000A0B75 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		E4704FB828E280ED000A0B75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 			children = (
 				E4704FB628E27D15000A0B75 /* ColorExtensions.swift */,
 				E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */,
+				E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */,
 				E4FEB58F28E356A70010E7E3 /* UISegmentedControlExtensions.swift in Sources */,
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
+				E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */,
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
 				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
