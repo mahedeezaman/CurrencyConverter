@@ -20,10 +20,10 @@ class HomeViewController: UIViewController {
         return balanceViewController
     }()
     
-    let buttonViewController : ButtonViewController = {
-        let balanceViewController = ButtonViewController()
-        //balanceViewController.view.backgroundColor = ColorConstants.homeViewBackground
-        return balanceViewController
+    let convertCurrencyViewController: ConvertCurrencyViewController = {
+        let convertCurrencyVC = ConvertCurrencyViewController()
+        convertCurrencyVC.view.backgroundColor = ColorConstants.homeViewBackground
+        return convertCurrencyVC
     }()
     
     @IBOutlet weak var topLabelViewContainer: UIView!
@@ -59,10 +59,9 @@ class HomeViewController: UIViewController {
         mainContainerView.addSubview(balanceViewController.view)
         balanceViewController.didMove(toParent: self)
         
-        buttonViewController.delegate = self
-        addChild(buttonViewController)
-        mainContainerView.addSubview(buttonViewController.view)
-        buttonViewController.didMove(toParent: self)
+        addChild(convertCurrencyViewController)
+        mainContainerView.addSubview(convertCurrencyViewController.view)
+        convertCurrencyViewController.didMove(toParent: self)
     }
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -70,7 +69,7 @@ class HomeViewController: UIViewController {
         case 0:
             mainContainerView.bringSubviewToFront(balanceViewController.view)
         case 1:
-            mainContainerView.bringSubviewToFront(buttonViewController.view)
+            mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
         default:
             mainContainerView.bringSubviewToFront(balanceViewController.view)
         }
@@ -82,25 +81,5 @@ extension HomeViewController : ConvertedValue {
         dummyData[currency] = amount
         balanceViewController.dummyData[currency] = amount
         balanceViewController.balanceTableView.reloadData()
-    }
-}
-
-class ButtonViewController: UIViewController {
-    weak var delegate : ConvertedValue? = nil
-    
-    override func viewDidLoad() {
-        view.backgroundColor = ColorConstants.homeViewContainersColor
-        view.layer.cornerRadius = Constants.cornerRadius
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        let button = UIButton(frame: CGRect(x: view.frame.width/2-50, y: view.frame.height/2-100, width: 100, height: 50))
-        button.backgroundColor = .green
-        button.setTitle("Test Button", for: .normal)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        view.addSubview(button)
-    }
-    
-    @objc func buttonAction() {
-        delegate?.valueChanged(of: "EUR", amount: "Value changed")
     }
 }
