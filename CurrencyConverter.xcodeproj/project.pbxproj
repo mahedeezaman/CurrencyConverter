@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E40F7B5128E72B55001A31BB /* ViewBorderAndCornerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5028E72B55001A31BB /* ViewBorderAndCornerCreator.swift */; };
 		E40F7B5528E74601001A31BB /* AlertConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5428E74601001A31BB /* AlertConstants.swift */; };
+		E40F7B5728E7476D001A31BB /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5628E7476D001A31BB /* APIConstants.swift */; };
+		E40F7B5A28E747A1001A31BB /* CurrencyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */; };
 		E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422A63528E12F1000CD1582 /* HomeViewController.swift */; };
 		E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E422A63628E12F1000CD1582 /* HomeViewController.xib */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		E40F7B5028E72B55001A31BB /* ViewBorderAndCornerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBorderAndCornerCreator.swift; sourceTree = "<group>"; };
 		E40F7B5428E74601001A31BB /* AlertConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConstants.swift; sourceTree = "<group>"; };
+		E40F7B5628E7476D001A31BB /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataModel.swift; sourceTree = "<group>"; };
 		E422A63528E12F1000CD1582 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E422A63628E12F1000CD1582 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,14 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		E40F7B5828E7478E001A31BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E45D8E8228E3CADD008C87CC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +153,7 @@
 				E4647FB728E0BB510034E14E /* SceneDelegate.swift */,
 				E4704FB528E27D08000A0B75 /* Extensions */,
 				E4704FB428E27CF6000A0B75 /* Utilities */,
+				E40F7B5828E7478E001A31BB /* Model */,
 				E45D8E8228E3CADD008C87CC /* View */,
 				E4647FBE28E0BB530034E14E /* Assets.xcassets */,
 				E4647FC028E0BB530034E14E /* LaunchScreen.storyboard */,
@@ -163,6 +176,7 @@
 				E4704FB228E27AFC000A0B75 /* ColorConstants.swift */,
 				E4704FB828E280ED000A0B75 /* Constants.swift */,
 				E40F7B5428E74601001A31BB /* AlertConstants.swift */,
+				E40F7B5628E7476D001A31BB /* APIConstants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -299,9 +313,11 @@
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
 				E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */,
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
+				E40F7B5A28E747A1001A31BB /* CurrencyDataModel.swift in Sources */,
 				E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */,
 				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E40F7B5128E72B55001A31BB /* ViewBorderAndCornerCreator.swift in Sources */,
+				E40F7B5728E7476D001A31BB /* APIConstants.swift in Sources */,
 				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
 				E40F7B5528E74601001A31BB /* AlertConstants.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,
