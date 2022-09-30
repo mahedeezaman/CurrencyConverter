@@ -63,21 +63,10 @@ class HomeViewController: UIViewController {
     }
     
     func setupBorders() {
-        sellAmountContainer.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        sellAmountContainer.layer.borderWidth = 2
-        sellAmountContainer.layer.cornerRadius = Constants.cornerRadius
-        
-        buyAmountContainer.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        buyAmountContainer.layer.borderWidth = 2
-        buyAmountContainer.layer.cornerRadius = Constants.cornerRadius
-        
-        sellCurrency.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        sellCurrency.layer.borderWidth = 2
-        sellCurrency.layer.cornerRadius = Constants.cornerRadius
-        
-        buyCurrency.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        buyCurrency.layer.borderWidth = 2
-        buyCurrency.layer.cornerRadius = Constants.cornerRadius
+        createRoundedBorder(of: sellCurrency, width: 2)
+        createRoundedBorder(of: buyCurrency, width: 2)
+        createRoundedBorder(of: buyAmountContainer, width: 2)
+        createRoundedBorder(of: sellAmountContainer, width: 2)
     }
     
     func setupMainConainterView() {
@@ -118,6 +107,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController : TappedOnCurrency {
     func tappedCurrency(_ currency: String, having amount: String) {
         if forSell {
+            guard let availAmount = Double(amount), availAmount > 0 else {
+                let alertController = showAlertWith(title: Constants.error, and: "You have insufficient balance in your account")
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
             sellCurrency.setTitle(currency, for: .normal)
             convertCurrencyViewController.sellCurrency = currency
             sellAmount.text = amount

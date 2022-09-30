@@ -64,17 +64,6 @@ class ConvertCurrencyViewController: UIViewController {
         submitButton.layer.cornerRadius = Constants.cornerRadius
     }
     
-    func showAlertWith(title: String, and message: String) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))
-        alertController.setBackgroundColor(color: ColorConstants.homeViewBackground)
-        alertController.setTitleFontAndColor()
-        alertController.setMessageFontAndColor()
-        alertController.setTint()
-        
-        return alertController
-    }
-    
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         let alertController = showAlertWith(title: Constants.success, and: "You have successfully created a dummy alert")
         
