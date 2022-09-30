@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     ]
     var buyAmountVar = ""
     var sellAmountVar = ""
+    var forSell = true
     
     let balanceViewController : AvailableBalanceViewController = {
         let balanceViewController = AvailableBalanceViewController()
@@ -37,13 +38,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sellAmount: UILabel!
     @IBOutlet weak var sellIcon: UIImageView!
     @IBOutlet weak var sellCurrency: UIButton!
-    @IBOutlet weak var buyCurrencyChangeButton: UIButton!
     
     @IBOutlet weak var buyAmountContainer: UIView!
     @IBOutlet weak var buyAmount: UILabel!
     @IBOutlet weak var buyIcon: UIImageView!
     @IBOutlet weak var buyCurrency: UIButton!
-    @IBOutlet weak var sellCurrencyChangeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +52,7 @@ class HomeViewController: UIViewController {
         
         sellAmount.text = sellAmountVar
         buyAmount.text = buyAmountVar
-        mainContainerView.bringSubviewToFront(balanceViewController.view)
+        mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
     }
     
     func setupColor() {
@@ -72,13 +71,13 @@ class HomeViewController: UIViewController {
         buyAmountContainer.layer.borderWidth = 2
         buyAmountContainer.layer.cornerRadius = Constants.cornerRadius
         
-        sellCurrencyChangeButton.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        sellCurrencyChangeButton.layer.borderWidth = 2
-        sellCurrencyChangeButton.layer.cornerRadius = Constants.cornerRadius
+        sellCurrency.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
+        sellCurrency.layer.borderWidth = 2
+        sellCurrency.layer.cornerRadius = Constants.cornerRadius
         
-        buyCurrencyChangeButton.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
-        buyCurrencyChangeButton.layer.borderWidth = 2
-        buyCurrencyChangeButton.layer.cornerRadius = Constants.cornerRadius
+        buyCurrency.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
+        buyCurrency.layer.borderWidth = 2
+        buyCurrency.layer.cornerRadius = Constants.cornerRadius
     }
     
     func setupMainConainterView() {
@@ -86,37 +85,54 @@ class HomeViewController: UIViewController {
         mainContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         balanceViewController.dummyData = dummyData
+        balanceViewController.tappedCurrencyDelegate = self
         addChild(balanceViewController)
         mainContainerView.addSubview(balanceViewController.view)
         balanceViewController.didMove(toParent: self)
         
         addChild(convertCurrencyViewController)
+        convertCurrencyViewController.amountEnteredDelegate = self
         mainContainerView.addSubview(convertCurrencyViewController.view)
         convertCurrencyViewController.didMove(toParent: self)
     }
     
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            mainContainerView.bringSubviewToFront(balanceViewController.view)
-        case 1:
-            mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
-        default:
-            mainContainerView.bringSubviewToFront(balanceViewController.view)
-        }
-    }
-    
     @IBAction func sellcurrencyTapped(_ sender: UIButton) {
+        forSell = true
+        var newDummyData = dummyData
+        newDummyData.removeValue(forKey: buyCurrency.titleLabel?.text ?? "")
+        balanceViewController.dummyData = newDummyData
+        balanceViewController.balanceTableView.reloadData()
+        mainContainerView.bringSubviewToFront(balanceViewController.view)
     }
     
     @IBAction func buyCurrencyTapped(_ sender: UIButton) {
+        forSell = false
+        var newDummyData = dummyData
+        newDummyData.removeValue(forKey: sellCurrency.titleLabel?.text ?? "")
+        balanceViewController.dummyData = newDummyData
+        balanceViewController.balanceTableView.reloadData()
+        mainContainerView.bringSubviewToFront(balanceViewController.view)
     }
 }
 
-extension HomeViewController : ConvertedValue {
-    func valueChanged(of currency: String, amount: String) {
-        dummyData[currency] = amount
-        balanceViewController.dummyData[currency] = amount
-        balanceViewController.balanceTableView.reloadData()
+extension HomeViewController : TappedOnCurrency {
+    func tappedCurrency(_ currency: String, having amount: String) {
+        if forSell {
+            sellCurrency.setTitle(currency, for: .normal)
+            convertCurrencyViewController.sellCurrency = currency
+            sellAmount.text = amount
+        } else {
+            buyCurrency.setTitle(currency, for: .normal)
+            convertCurrencyViewController.buyCurrency = currency
+            buyAmount.text = amount
+        }
+        mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
+    }
+}
+
+extension HomeViewController: AmountEntered {
+    func typedAmount(amount: String) {
+        sellAmountVar = amount
+        sellAmount.text = sellAmountVar
     }
 }

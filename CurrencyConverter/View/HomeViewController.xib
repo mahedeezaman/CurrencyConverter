@@ -14,14 +14,12 @@
                 <outlet property="buyAmount" destination="BvQ-Zx-T5N" id="nG5-nu-EuZ"/>
                 <outlet property="buyAmountContainer" destination="jOb-Wr-kSM" id="WyZ-l9-rBu"/>
                 <outlet property="buyCurrency" destination="puv-ss-YNH" id="K9e-xW-HLS"/>
-                <outlet property="buyCurrencyChangeButton" destination="puv-ss-YNH" id="HZL-89-VED"/>
                 <outlet property="buyIcon" destination="ML9-rO-0qD" id="xBl-3b-Q7l"/>
                 <outlet property="homeViewTopLabel" destination="2KQ-QZ-WP0" id="MoZ-Iw-4pw"/>
                 <outlet property="mainContainerView" destination="08c-zr-K0d" id="QyF-Gx-kJF"/>
                 <outlet property="sellAmount" destination="unK-c0-J4q" id="cWg-19-0sT"/>
                 <outlet property="sellAmountContainer" destination="ywE-JU-v2f" id="Fp2-I6-cjD"/>
                 <outlet property="sellCurrency" destination="VBP-fk-A2Z" id="i6J-0h-4AO"/>
-                <outlet property="sellCurrencyChangeButton" destination="VBP-fk-A2Z" id="rJ7-XI-WvQ"/>
                 <outlet property="sellIcon" destination="h9p-Kt-eWa" id="gEw-zM-039"/>
                 <outlet property="topLabelViewContainer" destination="G0p-TW-azv" id="wZc-Tl-5n7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

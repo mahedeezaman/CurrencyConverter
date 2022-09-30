@@ -9,4 +9,6 @@ import Foundation
 
 struct Constants {
     static var cornerRadius: CGFloat = 20
+    static var success = "Success"
+    static var error = "Error"
 }
