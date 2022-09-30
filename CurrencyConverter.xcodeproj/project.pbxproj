@@ -21,6 +21,7 @@
 		E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB228E27AFC000A0B75 /* ColorConstants.swift */; };
 		E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB628E27D15000A0B75 /* ColorExtensions.swift */; };
 		E4704FB928E280ED000A0B75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4704FB828E280ED000A0B75 /* Constants.swift */; };
+		E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */; };
 		E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */; };
 		E4CD531528E5229D000489E7 /* ConvertCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */; };
 		E4CD531628E5229D000489E7 /* ConvertCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CD531428E5229D000489E7 /* ConvertCurrencyViewController.xib */; };
@@ -55,6 +56,7 @@
 		E4704FB228E27AFC000A0B75 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		E4704FB628E27D15000A0B75 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		E4704FB828E280ED000A0B75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyViewController.swift; sourceTree = "<group>"; };
 		E4CD531428E5229D000489E7 /* ConvertCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConvertCurrencyViewController.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				E4704FB628E27D15000A0B75 /* ColorExtensions.swift */,
 				E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */,
 				E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */,
+				E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
 				E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */,
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
+				E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */,
 				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,

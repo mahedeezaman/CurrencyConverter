@@ -93,6 +93,14 @@ class ConvertCurrencyViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Success", message: "You have successfully created a dummy alert", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        alertController.setBackgroundColor(color: ColorConstants.homeViewBackground)
+        alertController.setTitleFontAndColor()
+        alertController.setMessageFontAndColor()
+        alertController.setTint()
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func sellcurrencyTapped(_ sender: UIButton) {
