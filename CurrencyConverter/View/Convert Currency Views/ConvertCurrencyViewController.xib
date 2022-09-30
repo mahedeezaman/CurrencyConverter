@@ -11,7 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConvertCurrencyViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
+                <outlet property="buyAmount" destination="RM7-V3-u1a" id="qB6-wI-c9s"/>
+                <outlet property="buyAmountContainer" destination="hOo-ut-DcI" id="b3s-lU-UTG"/>
+                <outlet property="buyCurrency" destination="wnO-cg-7p6" id="UNt-v4-CKB"/>
+                <outlet property="buyCurrencyChangeButton" destination="wnO-cg-7p6" id="r6u-Ff-E3Z"/>
+                <outlet property="buyIcon" destination="Z2J-H2-de9" id="6aL-HQ-oHN"/>
                 <outlet property="containerView" destination="5fL-Tu-OEk" id="evq-4h-VV3"/>
+                <outlet property="sellAmount" destination="wbq-Dh-SUw" id="1hT-s7-EjS"/>
+                <outlet property="sellAmountContainer" destination="2I9-CO-jhD" id="bbV-Iz-Smo"/>
+                <outlet property="sellCurrency" destination="azq-c0-Y7t" id="Sjz-4Z-JKf"/>
+                <outlet property="sellCurrencyChangeButton" destination="azq-c0-Y7t" id="BYD-Rj-Bms"/>
+                <outlet property="sellIcon" destination="jrw-RR-fHx" id="q3Z-GQ-8wz"/>
+                <outlet property="submitButton" destination="r5D-Ks-ynQ" id="nq1-5H-Ew9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,18 +47,30 @@
                                                 <constraint firstAttribute="width" constant="60" id="elN-fM-qzP"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHM-tD-Fel">
-                                            <rect key="frame" x="75" y="0.0" width="33.666666666666657" height="60"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHM-tD-Fel">
+                                            <rect key="frame" x="75" y="0.0" width="9" height="60"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" systemColor="systemRedColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-Dh-SUw">
-                                            <rect key="frame" x="222" y="0.0" width="48" height="60"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-CO-jhD" userLabel="Container">
+                                            <rect key="frame" x="94" y="0.0" width="186" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-Dh-SUw">
+                                                    <rect key="frame" x="5" y="0.0" width="171" height="60"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="wbq-Dh-SUw" secondAttribute="bottom" id="KFo-Fa-l4y"/>
+                                                <constraint firstItem="wbq-Dh-SUw" firstAttribute="leading" secondItem="2I9-CO-jhD" secondAttribute="leading" constant="5" id="Rle-tC-sEM"/>
+                                                <constraint firstItem="wbq-Dh-SUw" firstAttribute="top" secondItem="2I9-CO-jhD" secondAttribute="top" id="wBA-xd-1rW"/>
+                                                <constraint firstAttribute="trailing" secondItem="wbq-Dh-SUw" secondAttribute="trailing" constant="10" id="y4C-WS-USK"/>
+                                            </constraints>
+                                        </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azq-c0-Y7t">
                                             <rect key="frame" x="285" y="0.0" width="75" height="60"/>
                                             <constraints>
@@ -55,25 +78,30 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="sellcurrencyTapped:" destination="-1" eventType="touchUpInside" id="HxS-MM-b0P"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="wbq-Dh-SUw" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="4H4-yt-RD0"/>
-                                        <constraint firstItem="azq-c0-Y7t" firstAttribute="leading" secondItem="wbq-Dh-SUw" secondAttribute="trailing" constant="15" id="51J-RA-e0W"/>
-                                        <constraint firstAttribute="bottom" secondItem="jrw-RR-fHx" secondAttribute="bottom" id="RQr-Gf-slG"/>
-                                        <constraint firstAttribute="bottom" secondItem="tHM-tD-Fel" secondAttribute="bottom" id="Rey-wk-aRr"/>
-                                        <constraint firstItem="tHM-tD-Fel" firstAttribute="leading" secondItem="jrw-RR-fHx" secondAttribute="trailing" constant="15" id="YKI-vZ-nJH"/>
-                                        <constraint firstAttribute="trailing" secondItem="azq-c0-Y7t" secondAttribute="trailing" id="alH-J0-ijd"/>
-                                        <constraint firstItem="tHM-tD-Fel" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="bMS-DI-uqV"/>
-                                        <constraint firstItem="jrw-RR-fHx" firstAttribute="leading" secondItem="AMa-fO-T1o" secondAttribute="leading" id="cKD-cq-DUk"/>
-                                        <constraint firstAttribute="height" constant="60" id="cPL-m9-jjd"/>
-                                        <constraint firstAttribute="bottom" secondItem="azq-c0-Y7t" secondAttribute="bottom" id="etw-gP-em3"/>
-                                        <constraint firstAttribute="bottom" secondItem="wbq-Dh-SUw" secondAttribute="bottom" id="jle-cN-8Mn"/>
-                                        <constraint firstItem="jrw-RR-fHx" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="wF2-rs-O73"/>
-                                        <constraint firstItem="azq-c0-Y7t" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="zxi-tF-oyc"/>
+                                        <constraint firstAttribute="height" constant="60" id="94F-25-8US"/>
+                                        <constraint firstItem="tHM-tD-Fel" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="FeS-h8-0nW"/>
+                                        <constraint firstItem="jrw-RR-fHx" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="GcT-1P-x2T"/>
+                                        <constraint firstItem="jrw-RR-fHx" firstAttribute="leading" secondItem="AMa-fO-T1o" secondAttribute="leading" id="K9O-dq-fDI"/>
+                                        <constraint firstItem="azq-c0-Y7t" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="N6v-oL-dId"/>
+                                        <constraint firstAttribute="bottom" secondItem="jrw-RR-fHx" secondAttribute="bottom" id="OdO-7b-2lu"/>
+                                        <constraint firstAttribute="trailing" secondItem="azq-c0-Y7t" secondAttribute="trailing" id="P9O-3H-TBM"/>
+                                        <constraint firstItem="2I9-CO-jhD" firstAttribute="leading" secondItem="tHM-tD-Fel" secondAttribute="trailing" constant="10" id="W4m-jN-hxO"/>
+                                        <constraint firstItem="azq-c0-Y7t" firstAttribute="leading" secondItem="2I9-CO-jhD" secondAttribute="trailing" constant="5" id="XEP-gX-Pnn"/>
+                                        <constraint firstAttribute="bottom" secondItem="2I9-CO-jhD" secondAttribute="bottom" id="erC-L5-4ip"/>
+                                        <constraint firstAttribute="bottom" secondItem="tHM-tD-Fel" secondAttribute="bottom" id="jVE-Y4-4wd"/>
+                                        <constraint firstItem="tHM-tD-Fel" firstAttribute="leading" secondItem="jrw-RR-fHx" secondAttribute="trailing" constant="15" id="o1e-dF-V0x"/>
+                                        <constraint firstItem="2I9-CO-jhD" firstAttribute="top" secondItem="AMa-fO-T1o" secondAttribute="top" id="pLg-Pm-ese"/>
+                                        <constraint firstAttribute="bottom" secondItem="azq-c0-Y7t" secondAttribute="bottom" id="y2k-u0-rP5"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-a9-lIM" userLabel="Receive View">
@@ -86,18 +114,30 @@
                                                 <constraint firstAttribute="width" constant="60" id="7gS-UJ-XPH"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7l-r8-eCu">
-                                            <rect key="frame" x="75" y="0.0" width="72" height="60"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7l-r8-eCu">
+                                            <rect key="frame" x="75" y="0.0" width="12.666666666666671" height="60"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM7-V3-u1a">
-                                            <rect key="frame" x="222" y="0.0" width="48" height="60"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" systemColor="systemGreenColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-ut-DcI" userLabel="Container">
+                                            <rect key="frame" x="97.666666666666671" y="0.0" width="182.33333333333331" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM7-V3-u1a">
+                                                    <rect key="frame" x="5" y="0.0" width="167.33333333333334" height="60"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="RM7-V3-u1a" firstAttribute="top" secondItem="hOo-ut-DcI" secondAttribute="top" id="88s-tF-u3O"/>
+                                                <constraint firstAttribute="trailing" secondItem="RM7-V3-u1a" secondAttribute="trailing" constant="10" id="GKz-QQ-XGj"/>
+                                                <constraint firstItem="RM7-V3-u1a" firstAttribute="leading" secondItem="hOo-ut-DcI" secondAttribute="leading" constant="5" id="q6E-WZ-6V4"/>
+                                                <constraint firstAttribute="bottom" secondItem="RM7-V3-u1a" secondAttribute="bottom" id="zM8-E5-dvK"/>
+                                            </constraints>
+                                        </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnO-cg-7p6">
                                             <rect key="frame" x="285" y="0.0" width="75" height="60"/>
                                             <constraints>
@@ -105,23 +145,28 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buyCurrencyTapped:" destination="-1" eventType="touchUpInside" id="TFv-D9-LXZ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="hOo-ut-DcI" firstAttribute="leading" secondItem="Z7l-r8-eCu" secondAttribute="trailing" constant="10" id="1xy-0U-vwr"/>
                                         <constraint firstItem="Z2J-H2-de9" firstAttribute="top" secondItem="O1x-a9-lIM" secondAttribute="top" id="Gkh-g0-l2J"/>
-                                        <constraint firstItem="wnO-cg-7p6" firstAttribute="leading" secondItem="RM7-V3-u1a" secondAttribute="trailing" constant="15" id="N4M-Dj-cJW"/>
                                         <constraint firstAttribute="trailing" secondItem="wnO-cg-7p6" secondAttribute="trailing" id="PF4-kQ-RBu"/>
-                                        <constraint firstAttribute="bottom" secondItem="RM7-V3-u1a" secondAttribute="bottom" id="PcK-xM-eBl"/>
                                         <constraint firstAttribute="height" constant="60" id="RB8-J6-enS"/>
-                                        <constraint firstItem="RM7-V3-u1a" firstAttribute="top" secondItem="O1x-a9-lIM" secondAttribute="top" id="ash-Tf-Kbf"/>
+                                        <constraint firstItem="hOo-ut-DcI" firstAttribute="top" secondItem="O1x-a9-lIM" secondAttribute="top" id="Tif-nq-6jT"/>
+                                        <constraint firstItem="wnO-cg-7p6" firstAttribute="leading" secondItem="hOo-ut-DcI" secondAttribute="trailing" constant="5" id="ZfL-Zf-lGN"/>
                                         <constraint firstAttribute="bottom" secondItem="Z2J-H2-de9" secondAttribute="bottom" id="kBp-yd-ctI"/>
                                         <constraint firstItem="Z7l-r8-eCu" firstAttribute="top" secondItem="O1x-a9-lIM" secondAttribute="top" id="kKZ-Fx-K6X"/>
                                         <constraint firstAttribute="bottom" secondItem="Z7l-r8-eCu" secondAttribute="bottom" id="mkx-kL-Iys"/>
                                         <constraint firstItem="Z2J-H2-de9" firstAttribute="leading" secondItem="O1x-a9-lIM" secondAttribute="leading" id="o6D-L6-Vnc"/>
                                         <constraint firstItem="Z7l-r8-eCu" firstAttribute="leading" secondItem="Z2J-H2-de9" secondAttribute="trailing" constant="15" id="q5j-4z-Qez"/>
+                                        <constraint firstAttribute="bottom" secondItem="hOo-ut-DcI" secondAttribute="bottom" id="uqX-r3-3gR"/>
                                         <constraint firstAttribute="bottom" secondItem="wnO-cg-7p6" secondAttribute="bottom" id="zA3-8Q-f9c"/>
                                         <constraint firstItem="wnO-cg-7p6" firstAttribute="top" secondItem="O1x-a9-lIM" secondAttribute="top" id="zaI-VD-ebo"/>
                                     </constraints>
@@ -140,7 +185,12 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Submit">
+                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="cRN-ik-kYi"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="LQV-NM-YEt" userLabel="Dialpad">
                             <rect key="frame" x="0.0" y="300" width="390" height="267"/>
@@ -155,6 +205,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="2gs-03-DEb"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eux-9f-rYX">
                                             <rect key="frame" x="135" y="0.0" width="120" height="55.666666666666664"/>
@@ -163,6 +216,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="Vbc-12-NBh"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iy4-tx-as4">
                                             <rect key="frame" x="270" y="0.0" width="120" height="55.666666666666664"/>
@@ -171,6 +227,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="eMx-6K-uBg"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,6 +244,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="uys-QN-h2c"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zj-4x-f9r">
                                             <rect key="frame" x="135" y="0.0" width="120" height="55.333333333333336"/>
@@ -193,6 +255,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="Tco-fR-noJ"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsS-QI-bR4">
                                             <rect key="frame" x="270" y="0.0" width="120" height="55.333333333333336"/>
@@ -201,6 +266,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="jD7-qP-VR9"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,6 +283,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="bdw-qQ-JEB"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-pZ-368">
                                             <rect key="frame" x="135" y="0.0" width="120" height="55.666666666666664"/>
@@ -223,6 +294,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="bco-E3-gcH"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbL-mo-dZV">
                                             <rect key="frame" x="270" y="0.0" width="120" height="55.666666666666664"/>
@@ -231,6 +305,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="bKN-45-m3x"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,6 +326,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="afK-qm-fQm"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08R-QR-APK">
                                             <rect key="frame" x="135" y="0.0" width="120" height="55.333333333333336"/>
@@ -257,6 +337,9 @@
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="dialpadAdded:" destination="-1" eventType="touchUpInside" id="gkY-UE-Rvp"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTE-4l-IpZ">
                                             <rect key="frame" x="270" y="0.0" width="120" height="55.333333333333336"/>
@@ -265,6 +348,9 @@
                                             <state key="normal" image="delete.left" catalog="system">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="dialpadDeleted:" destination="-1" eventType="touchUpInside" id="hOP-Yk-goU"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
