@@ -13,8 +13,8 @@ class HomeViewController: UIViewController {
         "USD" : "0.0",
         "JPY" : "0.0"
     ]
-    var buyAmountVar = ""
-    var sellAmountVar = ""
+    var buyAmountVar = "0.0"
+    var sellAmountVar = "0.0"
     var forSell = true
     
     let balanceViewController : AvailableBalanceViewController = {

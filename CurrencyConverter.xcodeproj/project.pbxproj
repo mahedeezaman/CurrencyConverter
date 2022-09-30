@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E40F7B5128E72B55001A31BB /* ViewBorderAndCornerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5028E72B55001A31BB /* ViewBorderAndCornerCreator.swift */; };
-		E40F7B5328E72D13001A31BB /* alertCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5228E72D13001A31BB /* alertCreator.swift */; };
 		E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422A63528E12F1000CD1582 /* HomeViewController.swift */; };
 		E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E422A63628E12F1000CD1582 /* HomeViewController.xib */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
@@ -27,7 +26,7 @@
 		E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */; };
 		E4CD531528E5229D000489E7 /* ConvertCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */; };
 		E4CD531628E5229D000489E7 /* ConvertCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CD531428E5229D000489E7 /* ConvertCurrencyViewController.xib */; };
-		E4FEB58F28E356A70010E7E3 /* UISegmentedControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */; };
+		E4FEB58F28E356A70010E7E3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB58E28E356A70010E7E3 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		E40F7B5028E72B55001A31BB /* ViewBorderAndCornerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBorderAndCornerCreator.swift; sourceTree = "<group>"; };
-		E40F7B5228E72D13001A31BB /* alertCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertCreator.swift; sourceTree = "<group>"; };
 		E422A63528E12F1000CD1582 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E422A63628E12F1000CD1582 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +62,7 @@
 		E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyViewController.swift; sourceTree = "<group>"; };
 		E4CD531428E5229D000489E7 /* ConvertCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConvertCurrencyViewController.xib; sourceTree = "<group>"; };
-		E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtensions.swift; sourceTree = "<group>"; };
+		E4FEB58E28E356A70010E7E3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				E40F7B5028E72B55001A31BB /* ViewBorderAndCornerCreator.swift */,
-				E40F7B5228E72D13001A31BB /* alertCreator.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -171,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E4704FB628E27D15000A0B75 /* ColorExtensions.swift */,
-				E4FEB58E28E356A70010E7E3 /* UISegmentedControlExtensions.swift */,
+				E4FEB58E28E356A70010E7E3 /* UIViewController.swift */,
 				E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */,
 				E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */,
 			);
@@ -292,11 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */,
-				E40F7B5328E72D13001A31BB /* alertCreator.swift in Sources */,
 				E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */,
 				E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */,
 				E4CD531528E5229D000489E7 /* ConvertCurrencyViewController.swift in Sources */,
-				E4FEB58F28E356A70010E7E3 /* UISegmentedControlExtensions.swift in Sources */,
+				E4FEB58F28E356A70010E7E3 /* UIViewController.swift in Sources */,
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
 				E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */,
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
