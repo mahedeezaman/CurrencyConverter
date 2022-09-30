@@ -108,7 +108,7 @@ extension HomeViewController : TappedOnCurrency {
     func tappedCurrency(_ currency: String, having amount: String) {
         if forSell {
             guard let availAmount = Double(amount), availAmount > 0 else {
-                let alertController = showAlertWith(title: Constants.error, and: "You have insufficient balance in your account")
+                let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.insufficientBalance)
                 self.present(alertController, animated: true, completion: nil)
                 return
             }

@@ -65,7 +65,7 @@ class ConvertCurrencyViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        let alertController = showAlertWith(title: Constants.success, and: "You have successfully created a dummy alert")
+        let alertController = showAlertWith(title: AlertConstants.success, and: AlertConstants.dummySuccessAlert)
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -73,10 +73,10 @@ class ConvertCurrencyViewController: UIViewController {
     
     @IBAction func dialpadAdded(_ sender: UIButton) {
         if sellCurrency.isEmpty {
-            let alertController = showAlertWith(title: Constants.error, and: "Please select a currency to convert from")
+            let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertFrom)
             self.present(alertController, animated: true, completion: nil)
         } else if buyCurrency.isEmpty {
-            let alertController = showAlertWith(title: Constants.error, and: "Please select a currency to convert to")
+            let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertTo)
             self.present(alertController, animated: true, completion: nil)
         } else {
             sellAmountVar += sender.titleLabel?.text ?? ""
