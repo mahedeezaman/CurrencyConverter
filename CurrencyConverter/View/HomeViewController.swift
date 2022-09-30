@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
         "USD" : "0.0",
         "JPY" : "0.0"
     ]
+    var buyAmountVar = ""
+    var sellAmountVar = ""
     
     let balanceViewController : AvailableBalanceViewController = {
         let balanceViewController = AvailableBalanceViewController()
@@ -27,27 +29,56 @@ class HomeViewController: UIViewController {
     }()
     
     @IBOutlet weak var topLabelViewContainer: UIView!
-    @IBOutlet weak var segmentedControlViewContainer: UIView!
     @IBOutlet weak var mainContainerView: UIView!
-    
-    @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     @IBOutlet weak var homeViewTopLabel: UILabel!
+    
+    
+    @IBOutlet weak var sellAmountContainer: UIView!
+    @IBOutlet weak var sellAmount: UILabel!
+    @IBOutlet weak var sellIcon: UIImageView!
+    @IBOutlet weak var sellCurrency: UIButton!
+    @IBOutlet weak var buyCurrencyChangeButton: UIButton!
+    
+    @IBOutlet weak var buyAmountContainer: UIView!
+    @IBOutlet weak var buyAmount: UILabel!
+    @IBOutlet weak var buyIcon: UIImageView!
+    @IBOutlet weak var buyCurrency: UIButton!
+    @IBOutlet weak var sellCurrencyChangeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupColor()
+        setupBorders()
         setupMainConainterView()
-        segmentedControlOutlet.setupSegmentedControl()
         
+        sellAmount.text = sellAmountVar
+        buyAmount.text = buyAmountVar
         mainContainerView.bringSubviewToFront(balanceViewController.view)
     }
     
     func setupColor() {
         view.backgroundColor = ColorConstants.homeViewBackground
-        segmentedControlViewContainer.backgroundColor = ColorConstants.homeViewBackground
         topLabelViewContainer.backgroundColor = ColorConstants.homeViewContainersColor
         mainContainerView.backgroundColor = ColorConstants.homeViewContainersColor
         homeViewTopLabel.textColor = ColorConstants.homeViewTextColors
+    }
+    
+    func setupBorders() {
+        sellAmountContainer.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
+        sellAmountContainer.layer.borderWidth = 2
+        sellAmountContainer.layer.cornerRadius = Constants.cornerRadius
+        
+        buyAmountContainer.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
+        buyAmountContainer.layer.borderWidth = 2
+        buyAmountContainer.layer.cornerRadius = Constants.cornerRadius
+        
+        sellCurrencyChangeButton.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
+        sellCurrencyChangeButton.layer.borderWidth = 2
+        sellCurrencyChangeButton.layer.cornerRadius = Constants.cornerRadius
+        
+        buyCurrencyChangeButton.layer.borderColor = ColorConstants.homeViewContainersColor.cgColor
+        buyCurrencyChangeButton.layer.borderWidth = 2
+        buyCurrencyChangeButton.layer.cornerRadius = Constants.cornerRadius
     }
     
     func setupMainConainterView() {
@@ -73,6 +104,12 @@ class HomeViewController: UIViewController {
         default:
             mainContainerView.bringSubviewToFront(balanceViewController.view)
         }
+    }
+    
+    @IBAction func sellcurrencyTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func buyCurrencyTapped(_ sender: UIButton) {
     }
 }
 
