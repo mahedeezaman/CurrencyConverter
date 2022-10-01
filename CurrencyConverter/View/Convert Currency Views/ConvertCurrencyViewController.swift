@@ -78,7 +78,7 @@ class ConvertCurrencyViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        
+        self.currencyData = CurrencyDataModel()
         self.amountEnteredDelegate?.typedAmount(amount: AlertConstants.submit)
     }
     

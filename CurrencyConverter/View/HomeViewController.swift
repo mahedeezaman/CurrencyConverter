@@ -122,6 +122,7 @@ extension HomeViewController: AmountEntered {
     func typedAmount(amount: String) {
         if amount == AlertConstants.submit {
             currencyVM.sendConversionRequest()
+            sellAmount.text = ""
         } else {
             currencyVM.currencyData.fromAmount = amount
             sellAmount.text = currencyVM.currencyData.fromAmount
