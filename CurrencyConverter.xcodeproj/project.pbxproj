@@ -13,6 +13,8 @@
 		E40F7B5A28E747A1001A31BB /* CurrencyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */; };
 		E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422A63528E12F1000CD1582 /* HomeViewController.swift */; };
 		E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E422A63628E12F1000CD1582 /* HomeViewController.xib */; };
+		E43E157628E8121200D9FBBB /* NotificationNameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157528E8121200D9FBBB /* NotificationNameExtensions.swift */; };
+		E43E157828E8138500D9FBBB /* AlertDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157728E8138500D9FBBB /* AlertDataModel.swift */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
 		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
 		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
@@ -61,6 +63,8 @@
 		E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataModel.swift; sourceTree = "<group>"; };
 		E422A63528E12F1000CD1582 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E422A63628E12F1000CD1582 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E43E157528E8121200D9FBBB /* NotificationNameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtensions.swift; sourceTree = "<group>"; };
+		E43E157728E8138500D9FBBB /* AlertDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDataModel.swift; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
 		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
 		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
@@ -124,12 +128,13 @@
 		E40F7B5828E7478E001A31BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E47E782128E7CF7900550703 /* DataManager.swift */,
 				E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */,
 				E47E781B28E7CE9A00550703 /* HttpErrorModels.swift */,
 				E47E781D28E7CEB300550703 /* ResponseDataModel.swift */,
-				E47E782128E7CF7900550703 /* DataManager.swift */,
 				E47E782528E7CFB800550703 /* UserDataModel.swift */,
 				E47E782728E7D01300550703 /* CurrencyConversionErrorModels.swift */,
+				E43E157728E8138500D9FBBB /* AlertDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				E4FEB58E28E356A70010E7E3 /* UIViewController.swift */,
 				E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */,
 				E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */,
+				E43E157528E8121200D9FBBB /* NotificationNameExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				E422A63728E12F1000CD1582 /* HomeViewController.swift in Sources */,
 				E47E781728E7CDD300550703 /* UserDataConstants.swift in Sources */,
 				E40F7B5A28E747A1001A31BB /* CurrencyDataModel.swift in Sources */,
+				E43E157828E8138500D9FBBB /* AlertDataModel.swift in Sources */,
 				E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */,
 				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E47E781A28E7CE6200550703 /* NetworkServices.swift in Sources */,
@@ -392,6 +399,7 @@
 				E47E782D28E7D06100550703 /* CommissionOfPointSevenPercent.swift in Sources */,
 				E47E782228E7CF7900550703 /* DataManager.swift in Sources */,
 				E40F7B5528E74601001A31BB /* AlertConstants.swift in Sources */,
+				E43E157628E8121200D9FBBB /* NotificationNameExtensions.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

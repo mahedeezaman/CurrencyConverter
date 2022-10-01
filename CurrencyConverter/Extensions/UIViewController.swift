@@ -27,8 +27,8 @@ extension UIViewController {
         fullScreenProgressRing = nil
     }
     
-    func showAlertWith(title: String, and message: String) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func showAlertWith(alertData: AlertDataModel) -> UIAlertController {
+        let alertController = UIAlertController(title: alertData.title, message: alertData.message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))
         alertController.setBackgroundColor(color: ColorConstants.homeViewBackground)
         alertController.setTitleFontAndColor()

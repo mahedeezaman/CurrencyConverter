@@ -50,7 +50,7 @@ class ConvertCurrencyViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.currencyData.fromAmount = oldValue.fromAmount
                     self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
-                    let alertController = self.showAlertWith(title: AlertConstants.error, and: AlertConstants.insufficientBalance)
+                    let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.insufficientBalance))
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
@@ -74,7 +74,7 @@ class ConvertCurrencyViewController: UIViewController {
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         guard StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > 0.0 else {
-            let alertController = showAlertWith(title: AlertConstants.success, and: AlertConstants.amountCantBeZero)
+            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.success, message: AlertConstants.amountCantBeZero))
             self.present(alertController, animated: true, completion: nil)
             return
         }
@@ -85,13 +85,13 @@ class ConvertCurrencyViewController: UIViewController {
     
     @IBAction func dialpadAdded(_ sender: UIButton) {
         guard !currencyData.fromCurrency.isEmpty else {
-            let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertFrom)
+            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.selectToConvertFrom))
             self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard !currencyData.toCurrency.isEmpty else {
-            let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertTo)
+            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.selectToConvertTo))
             self.present(alertController, animated: true, completion: nil)
             return
         }
