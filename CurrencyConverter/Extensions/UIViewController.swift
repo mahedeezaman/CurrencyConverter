@@ -7,11 +7,10 @@
 
 import UIKit
 
-fileprivate var fullScreenProgressRing: UIView?
-
 extension UIViewController {
     func startProgressRing() {
         let fullScreenProgressRing = UIView(frame: self.view.bounds)
+        fullScreenProgressRing.tag = 154441
         fullScreenProgressRing.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         
         let indicator = UIActivityIndicatorView(style: .large)
@@ -23,8 +22,11 @@ extension UIViewController {
     }
     
     func stopProgressRing() {
-        fullScreenProgressRing?.removeFromSuperview()
-        fullScreenProgressRing = nil
+        if let viewWithTag = self.view.viewWithTag(154441) {
+            DispatchQueue.main.async {
+                viewWithTag.removeFromSuperview()
+            }
+        }
     }
     
     func showAlertWith(alertData: AlertDataModel) -> UIAlertController {

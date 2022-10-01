@@ -17,6 +17,7 @@ extension HomeViewController {
             convertCurrController.currencyData.toAmount = notificationData
             DispatchQueue.main.async {[weak self] in
                 self?.buyAmount.text = notificationData
+                self?.stopProgressRing()
             }
         }
     }

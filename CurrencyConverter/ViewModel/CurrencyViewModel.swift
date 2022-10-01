@@ -46,6 +46,7 @@ class CurrencyViewModel: ObservableObject {
     
     func confirmConversionRequest() {
         self.userData = self.userDataRequest
+        self.currencyData = CurrencyDataModel()
         self.commissionAmount = 0.0
         NotificationCenter.default.post(name: .alertNotification, object: AlertDataModel(title: AlertConstants.success, message: AlertConstants.conversionSuccess(data: self.currencyData, commissionFee: self.commissionAmount)))
     }

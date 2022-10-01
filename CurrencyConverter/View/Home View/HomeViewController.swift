@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var currencyVM = CurrencyViewModel()
+    var debounceTimer: Timer?
     var forSell = true
     
     let balanceViewController : AvailableBalanceViewController = {
