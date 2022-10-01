@@ -49,6 +49,7 @@ class ConvertCurrencyViewController: UIViewController {
     }
     var buyCurrency = ""
     var sellCurrency = ""
+    
     weak var amountEnteredDelegate: AmountEntered?
     
     @IBOutlet var containerView: UIView!

@@ -119,7 +119,7 @@ extension HomeViewController : TappedOnCurrency {
 
 extension HomeViewController: AmountEntered {
     func typedAmount(amount: String) {
-        currencyVM.currencyData.toAmount = amount
-        sellAmount.text = currencyVM.currencyData.toAmount
+        currencyVM.currencyData.fromAmount = amount
+        sellAmount.text = currencyVM.currencyData.fromAmount
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 struct CurrencyDataModel {
-    var fromAmount: String = "0.0"
+    var fromAmount: String = ""
     var fromCurrency: String = ""
-    var toAmount: String = "0.0"
+    var toAmount: String = ""
     var toCurrency: String = ""
 }
