@@ -108,11 +108,11 @@ extension HomeViewController : TappedOnCurrency {
             sellCurrency.setTitle(currency, for: .normal)
             convertCurrController.currencyData.fromCurrency = currency
             convertCurrController.availableBalance = amount
-            sellAmount.text = amount
+            currencyVM.currencyData.fromCurrency = currency
         } else {
             buyCurrency.setTitle(currency, for: .normal)
             convertCurrController.currencyData.toCurrency = currency
-            buyAmount.text = amount
+            currencyVM.currencyData.toCurrency = currency
         }
         mainContainerView.bringSubviewToFront(convertCurrController.view)
     }
@@ -120,7 +120,11 @@ extension HomeViewController : TappedOnCurrency {
 
 extension HomeViewController: AmountEntered {
     func typedAmount(amount: String) {
-        currencyVM.currencyData.fromAmount = amount
-        sellAmount.text = currencyVM.currencyData.fromAmount
+        if amount == AlertConstants.submit {
+            currencyVM.sendConversionRequest()
+        } else {
+            currencyVM.currencyData.fromAmount = amount
+            sellAmount.text = currencyVM.currencyData.fromAmount
+        }
     }
 }

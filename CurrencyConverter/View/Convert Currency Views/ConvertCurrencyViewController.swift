@@ -50,6 +50,8 @@ class ConvertCurrencyViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.currencyData.fromAmount = oldValue.fromAmount
                     self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
+                    let alertController = self.showAlertWith(title: AlertConstants.error, and: AlertConstants.insufficientBalance)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
@@ -71,23 +73,31 @@ class ConvertCurrencyViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        let alertController = showAlertWith(title: AlertConstants.success, and: AlertConstants.dummySuccessAlert)
+        guard StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > 0.0 else {
+            let alertController = showAlertWith(title: AlertConstants.success, and: AlertConstants.amountCantBeZero)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
         
-        self.present(alertController, animated: true, completion: nil)
+        self.amountEnteredDelegate?.typedAmount(amount: AlertConstants.submit)
     }
     
     
     @IBAction func dialpadAdded(_ sender: UIButton) {
-        if currencyData.fromCurrency.isEmpty {
+        guard !currencyData.fromCurrency.isEmpty else {
             let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertFrom)
             self.present(alertController, animated: true, completion: nil)
-        } else if currencyData.toCurrency.isEmpty {
+            return
+        }
+        
+        guard !currencyData.toCurrency.isEmpty else {
             let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertTo)
             self.present(alertController, animated: true, completion: nil)
-        } else {
-            currencyData.fromAmount += sender.titleLabel?.text ?? ""
-            self.amountEnteredDelegate?.typedAmount(amount: currencyData.fromAmount)
+            return
         }
+        
+        currencyData.fromAmount += sender.titleLabel?.text ?? ""
+        self.amountEnteredDelegate?.typedAmount(amount: currencyData.fromAmount)
     }
     
     @IBAction func dialpadDeleted(_ sender: UIButton) {
