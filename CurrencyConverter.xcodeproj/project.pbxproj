@@ -15,6 +15,9 @@
 		E422A63828E12F1000CD1582 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E422A63628E12F1000CD1582 /* HomeViewController.xib */; };
 		E43E157628E8121200D9FBBB /* NotificationNameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157528E8121200D9FBBB /* NotificationNameExtensions.swift */; };
 		E43E157828E8138500D9FBBB /* AlertDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157728E8138500D9FBBB /* AlertDataModel.swift */; };
+		E43E157B28E814BC00D9FBBB /* CurrencySelectedFromList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157A28E814BC00D9FBBB /* CurrencySelectedFromList.swift */; };
+		E43E157D28E814D700D9FBBB /* AmountEnteredToConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */; };
+		E43E157F28E814FC00D9FBBB /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157E28E814FC00D9FBBB /* NotificationListener.swift */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
 		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
 		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
@@ -65,6 +68,9 @@
 		E422A63628E12F1000CD1582 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E43E157528E8121200D9FBBB /* NotificationNameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtensions.swift; sourceTree = "<group>"; };
 		E43E157728E8138500D9FBBB /* AlertDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDataModel.swift; sourceTree = "<group>"; };
+		E43E157A28E814BC00D9FBBB /* CurrencySelectedFromList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectedFromList.swift; sourceTree = "<group>"; };
+		E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountEnteredToConvert.swift; sourceTree = "<group>"; };
+		E43E157E28E814FC00D9FBBB /* NotificationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
 		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
 		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
@@ -139,12 +145,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E43E157928E8148B00D9FBBB /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				E422A63528E12F1000CD1582 /* HomeViewController.swift */,
+				E422A63628E12F1000CD1582 /* HomeViewController.xib */,
+				E43E157A28E814BC00D9FBBB /* CurrencySelectedFromList.swift */,
+				E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */,
+				E43E157E28E814FC00D9FBBB /* NotificationListener.swift */,
+			);
+			path = "Home View";
+			sourceTree = "<group>";
+		};
 		E45D8E8228E3CADD008C87CC /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E40F7B4F28E72B3B001A31BB /* ViewComponents */,
-				E422A63528E12F1000CD1582 /* HomeViewController.swift */,
-				E422A63628E12F1000CD1582 /* HomeViewController.xib */,
+				E43E157928E8148B00D9FBBB /* Home View */,
 				E45D8E8328E3CAE8008C87CC /* Available Balance Views */,
 				E4CD531228E52260000489E7 /* Convert Currency Views */,
 			);
@@ -393,6 +410,7 @@
 				E47E782428E7CF9800550703 /* StringUtilities.swift in Sources */,
 				E47E782B28E7D04300550703 /* CommissionManager.swift in Sources */,
 				E40F7B5128E72B55001A31BB /* ViewBorderAndCornerCreator.swift in Sources */,
+				E43E157D28E814D700D9FBBB /* AmountEnteredToConvert.swift in Sources */,
 				E40F7B5728E7476D001A31BB /* APIConstants.swift in Sources */,
 				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
 				E47E782828E7D01300550703 /* CurrencyConversionErrorModels.swift in Sources */,
@@ -400,7 +418,9 @@
 				E47E782228E7CF7900550703 /* DataManager.swift in Sources */,
 				E40F7B5528E74601001A31BB /* AlertConstants.swift in Sources */,
 				E43E157628E8121200D9FBBB /* NotificationNameExtensions.swift in Sources */,
+				E43E157B28E814BC00D9FBBB /* CurrencySelectedFromList.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,
+				E43E157F28E814FC00D9FBBB /* NotificationListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
