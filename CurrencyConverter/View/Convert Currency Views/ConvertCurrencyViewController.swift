@@ -17,41 +17,41 @@ class ConvertCurrencyViewController: UIViewController {
         didSet {
             let numberOnlyFilter = currencyData.fromAmount.filter { $0.isNumber || $0 == "." }
             if currencyData.fromAmount != numberOnlyFilter {
-                DispatchQueue.main.async {
-                    self.currencyData.fromAmount = numberOnlyFilter
-                    self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
+                DispatchQueue.main.async {[weak self] in
+                    self?.currencyData.fromAmount = numberOnlyFilter
+                    self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
                 }
             }
             
             if Double(currencyData.fromAmount) ?? 0 > 9999999 {
-                DispatchQueue.main.async {
-                    self.currencyData.fromAmount = oldValue.fromAmount
-                    self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
+                DispatchQueue.main.async {[weak self] in
+                    self?.currencyData.fromAmount = oldValue.fromAmount
+                    self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
                 }
             }
             
             if let dotIndexFirst = currencyData.fromAmount.firstIndex(of: "."), let dotIndexLast = currencyData.fromAmount.lastIndex(of: ".") {
                 if currencyData.fromAmount.distance(from: dotIndexFirst, to: currencyData.fromAmount.endIndex) - 1 > 2 {
-                    DispatchQueue.main.async {
-                        self.currencyData.fromAmount = oldValue.fromAmount
-                        self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
+                    DispatchQueue.main.async {[weak self] in
+                        self?.currencyData.fromAmount = oldValue.fromAmount
+                        self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
                     }
                 }
                 
                 if dotIndexFirst != dotIndexLast {
-                    DispatchQueue.main.async {
-                        self.currencyData.fromAmount = oldValue.fromAmount
-                        self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
+                    DispatchQueue.main.async {[weak self] in
+                        self?.currencyData.fromAmount = oldValue.fromAmount
+                        self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
                     }
                 }
             }
             
             if StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > StringUtilities.convertStringToDouble(data: availableBalance) {
-                DispatchQueue.main.async {
-                    self.currencyData.fromAmount = oldValue.fromAmount
-                    self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
-                    let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.insufficientBalance))
-                    self.present(alertController, animated: true, completion: nil)
+                DispatchQueue.main.async {[weak self] in
+                    self?.currencyData.fromAmount = oldValue.fromAmount
+                    self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
+                    let alertController = self?.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.insufficientBalance))
+                    self?.present(alertController ?? UIAlertController(), animated: true, completion: nil)
                 }
             }
         }
