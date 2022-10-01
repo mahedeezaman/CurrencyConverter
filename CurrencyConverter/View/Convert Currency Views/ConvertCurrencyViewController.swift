@@ -12,43 +12,48 @@ protocol AmountEntered: AnyObject {
 }
 
 class ConvertCurrencyViewController: UIViewController {
-    var buyAmountVar = ""
-    var sellAmountVar = "" {
+    var availableBalance = "0.0"
+    var currencyData = CurrencyDataModel() {
         didSet {
-            let numberOnlyFilter = sellAmountVar.filter { $0.isNumber || $0 == "." }
-            if sellAmountVar != numberOnlyFilter {
+            let numberOnlyFilter = currencyData.fromAmount.filter { $0.isNumber || $0 == "." }
+            if currencyData.fromAmount != numberOnlyFilter {
                 DispatchQueue.main.async {
-                    self.sellAmountVar = numberOnlyFilter
-                    self.amountEnteredDelegate?.typedAmount(amount: self.sellAmountVar)
+                    self.currencyData.fromAmount = numberOnlyFilter
+                    self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
                 }
             }
             
-            if Double(sellAmountVar) ?? 0 > 9999999 {
+            if Double(currencyData.fromAmount) ?? 0 > 9999999 {
                 DispatchQueue.main.async {
-                    self.sellAmountVar = oldValue
-                    self.amountEnteredDelegate?.typedAmount(amount: self.sellAmountVar)
+                    self.currencyData.fromAmount = oldValue.fromAmount
+                    self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
                 }
             }
             
-            if let dotIndexFirst = sellAmountVar.firstIndex(of: "."), let dotIndexLast = sellAmountVar.lastIndex(of: ".") {
-                if sellAmountVar.distance(from: dotIndexFirst, to: sellAmountVar.endIndex) - 1 > 2 {
+            if let dotIndexFirst = currencyData.fromAmount.firstIndex(of: "."), let dotIndexLast = currencyData.fromAmount.lastIndex(of: ".") {
+                if currencyData.fromAmount.distance(from: dotIndexFirst, to: currencyData.fromAmount.endIndex) - 1 > 2 {
                     DispatchQueue.main.async {
-                        self.sellAmountVar = oldValue
-                        self.amountEnteredDelegate?.typedAmount(amount: self.sellAmountVar)
+                        self.currencyData.fromAmount = oldValue.fromAmount
+                        self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
                     }
                 }
                 
                 if dotIndexFirst != dotIndexLast {
                     DispatchQueue.main.async {
-                        self.sellAmountVar = oldValue
-                        self.amountEnteredDelegate?.typedAmount(amount: self.sellAmountVar)
+                        self.currencyData.fromAmount = oldValue.fromAmount
+                        self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
                     }
+                }
+            }
+            
+            if StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > StringUtilities.convertStringToDouble(data: availableBalance) {
+                DispatchQueue.main.async {
+                    self.currencyData.fromAmount = oldValue.fromAmount
+                    self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
                 }
             }
         }
     }
-    var buyCurrency = ""
-    var sellCurrency = ""
     
     weak var amountEnteredDelegate: AmountEntered?
     
@@ -73,22 +78,22 @@ class ConvertCurrencyViewController: UIViewController {
     
     
     @IBAction func dialpadAdded(_ sender: UIButton) {
-        if sellCurrency.isEmpty {
+        if currencyData.fromCurrency.isEmpty {
             let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertFrom)
             self.present(alertController, animated: true, completion: nil)
-        } else if buyCurrency.isEmpty {
+        } else if currencyData.toCurrency.isEmpty {
             let alertController = showAlertWith(title: AlertConstants.error, and: AlertConstants.selectToConvertTo)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            sellAmountVar += sender.titleLabel?.text ?? ""
-            self.amountEnteredDelegate?.typedAmount(amount: self.sellAmountVar)
+            currencyData.fromAmount += sender.titleLabel?.text ?? ""
+            self.amountEnteredDelegate?.typedAmount(amount: currencyData.fromAmount)
         }
     }
     
     @IBAction func dialpadDeleted(_ sender: UIButton) {
-        if sellAmountVar.count > 0 {
-            sellAmountVar.removeLast()
-            self.amountEnteredDelegate?.typedAmount(amount: self.sellAmountVar)
+        if currencyData.fromAmount.count > 0 {
+            currencyData.fromAmount.removeLast()
+            self.amountEnteredDelegate?.typedAmount(amount: self.currencyData.fromAmount)
         }
     }
 }

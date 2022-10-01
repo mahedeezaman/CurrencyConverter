@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         return balanceViewController
     }()
     
-    let convertCurrencyViewController: ConvertCurrencyViewController = {
+    let convertCurrController: ConvertCurrencyViewController = {
         let convertCurrencyVC = ConvertCurrencyViewController()
         convertCurrencyVC.view.backgroundColor = ColorConstants.homeViewBackground
         return convertCurrencyVC
@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
         
         sellAmount.text = currencyVM.currencyData.fromAmount
         buyAmount.text = currencyVM.currencyData.toAmount
-        mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
+        mainContainerView.bringSubviewToFront(convertCurrController.view)
     }
     
     func setupColor() {
@@ -72,10 +72,10 @@ class HomeViewController: UIViewController {
         mainContainerView.addSubview(balanceViewController.view)
         balanceViewController.didMove(toParent: self)
         
-        addChild(convertCurrencyViewController)
-        convertCurrencyViewController.amountEnteredDelegate = self
-        mainContainerView.addSubview(convertCurrencyViewController.view)
-        convertCurrencyViewController.didMove(toParent: self)
+        addChild(convertCurrController)
+        convertCurrController.amountEnteredDelegate = self
+        mainContainerView.addSubview(convertCurrController.view)
+        convertCurrController.didMove(toParent: self)
     }
     
     @IBAction func sellcurrencyTapped(_ sender: UIButton) {
@@ -106,14 +106,15 @@ extension HomeViewController : TappedOnCurrency {
                 return
             }
             sellCurrency.setTitle(currency, for: .normal)
-            convertCurrencyViewController.sellCurrency = currency
+            convertCurrController.currencyData.fromCurrency = currency
+            convertCurrController.availableBalance = amount
             sellAmount.text = amount
         } else {
             buyCurrency.setTitle(currency, for: .normal)
-            convertCurrencyViewController.buyCurrency = currency
+            convertCurrController.currencyData.toCurrency = currency
             buyAmount.text = amount
         }
-        mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
+        mainContainerView.bringSubviewToFront(convertCurrController.view)
     }
 }
 
