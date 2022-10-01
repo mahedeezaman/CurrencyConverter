@@ -19,6 +19,10 @@ class DataManager {
         return userData
     }
     
+    func saveUserData(userData: UserDataModel) {
+        self.userData = userData
+    }
+    
     func convertCurrency(from fromCurrency: String, to toCurrency: String, of amount: Double, withCommission: Double) async -> UserDataModel {
         
         let requestData = CurrencyDataModel(fromAmount: "\(amount)", fromCurrency: fromCurrency, toCurrency: toCurrency)
@@ -34,7 +38,6 @@ class DataManager {
             responseData.apiUseCount += 1
         }
         
-//        userData = responseData
         return responseData
     }
 }

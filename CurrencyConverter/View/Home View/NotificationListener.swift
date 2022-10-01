@@ -25,6 +25,11 @@ extension HomeViewController {
     
     @objc func alertNotificationListener(_ notification: Notification) {
         if let notificationData = notification.object as? AlertDataModel {
+            if notificationData.message == CurrencyConversionErrorModels.insufficientAmount.getRawValue() {
+                DispatchQueue.main.async {
+                    self.stopProgressRing()
+                }
+            }
             let alertController = showAlertWith(alertData: notificationData)
             self.present(alertController, animated: true)
         }

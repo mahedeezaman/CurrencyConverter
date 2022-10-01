@@ -50,6 +50,7 @@ class CurrencyViewModel: ObservableObject {
         
         if let userDataRequest {
             self.userData = userDataRequest
+            dataManager.saveUserData(userData: userDataRequest)
         }
         self.currencyData = CurrencyDataModel()
         self.commissionAmount = 0.0
