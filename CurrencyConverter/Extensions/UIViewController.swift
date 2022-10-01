@@ -23,9 +23,7 @@ extension UIViewController {
     
     func stopProgressRing() {
         if let viewWithTag = self.view.viewWithTag(154441) {
-            DispatchQueue.main.async {
-                viewWithTag.removeFromSuperview()
-            }
+            viewWithTag.removeFromSuperview()
         }
     }
     

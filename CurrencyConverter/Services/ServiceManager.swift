@@ -15,7 +15,7 @@ class ServiceManager {
             let response = try await networkService.getConvertedData(requestData: requestData)
             return completionHandler(response)
         } catch {
-            print(error.localizedDescription)
+            NotificationCenter.default.post(name: .alertNotification, object: AlertDataModel(title: AlertConstants.error, message: error.localizedDescription))
         }
     }
 }

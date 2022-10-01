@@ -23,6 +23,9 @@ extension HomeViewController : TappedOnCurrency {
             buyCurrency.setTitle(currency, for: .normal)
             convertCurrController.currencyData.toCurrency = currency
             currencyVM.currencyData.toCurrency = currency
+            if StringUtilities.convertStringToDouble(data: currencyVM.currencyData.fromAmount) > 0.0 {
+                typedAmount(amount: currencyVM.currencyData.fromAmount)
+            }
         }
         mainContainerView.bringSubviewToFront(convertCurrController.view)
     }

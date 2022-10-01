@@ -10,15 +10,23 @@ import Foundation
 extension HomeViewController {
     func setupObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(sellValueNotificationListener(_:)), name: .sellValueNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(alertNotificationListener(_:)), name: .alertNotification, object: nil)
     }
     
     @objc func sellValueNotificationListener(_ notification: Notification) {
         if let notificationData = notification.object as? String {
             convertCurrController.currencyData.toAmount = notificationData
-            DispatchQueue.main.async {[weak self] in
-                self?.buyAmount.text = notificationData
-                self?.stopProgressRing()
+            DispatchQueue.main.async {
+                self.buyAmount.text = notificationData
+                self.stopProgressRing()
             }
+        }
+    }
+    
+    @objc func alertNotificationListener(_ notification: Notification) {
+        if let notificationData = notification.object as? AlertDataModel {
+            let alertController = showAlertWith(alertData: notificationData)
+            self.present(alertController, animated: true)
         }
     }
 }
