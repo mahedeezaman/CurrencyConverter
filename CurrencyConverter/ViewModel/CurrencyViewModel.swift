@@ -29,6 +29,7 @@ class CurrencyViewModel: ObservableObject {
     }
     
     func sendConversionRequest() {
+        userData = dataManager.getUserData()
         userDataRequest = userData
         commissionManager.checkTransactionValidity(requestedData: currencyData, availabilityData: userData) { commissionAmount, error in
             if let error {
@@ -38,7 +39,12 @@ class CurrencyViewModel: ObservableObject {
                     let afterConversion = await self.dataManager.convertCurrency(from: self.currencyData.fromCurrency, to: self.currencyData.toCurrency, of: StringUtilities.convertStringToDouble(data: self.currencyData.fromAmount), withCommission: commissionAmount)
                     self.userDataRequest = afterConversion
                     self.commissionAmount = commissionAmount
-                    self.currencyData.toAmount = afterConversion.accountBalances[self.currencyData.toCurrency] ?? "0.0"
+                    
+                    let convertedTo = StringUtilities.convertStringToDouble(data: afterConversion.accountBalances[self.currencyData.toCurrency])
+                    let previousTo = StringUtilities.convertStringToDouble(data: self.userData.accountBalances[self.currencyData.toCurrency])
+                    self.userDataRequest?.accountBalances[self.currencyData.toCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: previousTo + convertedTo))"
+                    
+                    self.currencyData.toAmount = "\(convertedTo)"
                     NotificationCenter.default.post(name: .sellValueNotification, object: self.currencyData.toAmount)
                 }
             }

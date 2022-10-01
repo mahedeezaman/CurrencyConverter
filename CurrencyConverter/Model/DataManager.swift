@@ -30,11 +30,10 @@ class DataManager {
         
         await serviceManager.convertCurrency(requestData: requestData) { response in
             let previousFrom = StringUtilities.convertStringToDouble(data: self.userData.accountBalances[fromCurrency])
-            let previousTo = StringUtilities.convertStringToDouble(data: self.userData.accountBalances[toCurrency])
             let convertedAmount = StringUtilities.convertStringToDouble(data: response.amount)
             
             responseData.accountBalances[fromCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: previousFrom - amount - withCommission))"
-            responseData.accountBalances[toCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: previousTo + convertedAmount))"
+            responseData.accountBalances[toCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: convertedAmount))"
             responseData.apiUseCount += 1
         }
         

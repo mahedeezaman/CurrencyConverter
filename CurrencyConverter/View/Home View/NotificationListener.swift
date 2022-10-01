@@ -28,6 +28,10 @@ extension HomeViewController {
             if notificationData.message == CurrencyConversionErrorModels.insufficientAmount.getRawValue() {
                 DispatchQueue.main.async {
                     self.stopProgressRing()
+                    if !(self.sellAmount.text?.isEmpty ?? true) {
+                        self.sellAmount.text?.removeLast()
+                        self.typedAmount(amount: self.sellAmount.text ?? "0.0")
+                    }
                 }
             }
             let alertController = showAlertWith(alertData: notificationData)
