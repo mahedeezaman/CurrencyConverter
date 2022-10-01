@@ -74,10 +74,17 @@ class ConvertCurrencyViewController: UIViewController {
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         guard StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > 0.0 else {
-            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.success, message: AlertConstants.amountCantBeZero))
+            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.amountCantBeZero))
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        
+        guard StringUtilities.convertStringToDouble(data: currencyData.toAmount) > 0.0 else {
+            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.convertedAmountCantBeZero))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         self.currencyData = CurrencyDataModel()
         self.amountEnteredDelegate?.typedAmount(amount: AlertConstants.submit)
     }
