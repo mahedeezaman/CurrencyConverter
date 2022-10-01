@@ -29,6 +29,10 @@
 		E47E781A28E7CE6200550703 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E781928E7CE6200550703 /* NetworkServices.swift */; };
 		E47E781C28E7CE9A00550703 /* HttpErrorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E781B28E7CE9A00550703 /* HttpErrorModels.swift */; };
 		E47E781E28E7CEB300550703 /* ResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E781D28E7CEB300550703 /* ResponseDataModel.swift */; };
+		E47E782028E7CF5000550703 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E781F28E7CF5000550703 /* ServiceManager.swift */; };
+		E47E782228E7CF7900550703 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E782128E7CF7900550703 /* DataManager.swift */; };
+		E47E782428E7CF9800550703 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E782328E7CF9800550703 /* StringUtilities.swift */; };
+		E47E782628E7CFB800550703 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E782528E7CFB800550703 /* UserDataModel.swift */; };
 		E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */; };
 		E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */; };
 		E4CD531528E5229D000489E7 /* ConvertCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */; };
@@ -72,6 +76,10 @@
 		E47E781928E7CE6200550703 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		E47E781B28E7CE9A00550703 /* HttpErrorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpErrorModels.swift; sourceTree = "<group>"; };
 		E47E781D28E7CEB300550703 /* ResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataModel.swift; sourceTree = "<group>"; };
+		E47E781F28E7CF5000550703 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		E47E782128E7CF7900550703 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E47E782328E7CF9800550703 /* StringUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilities.swift; sourceTree = "<group>"; };
+		E47E782528E7CFB800550703 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +119,8 @@
 				E40F7B5928E747A1001A31BB /* CurrencyDataModel.swift */,
 				E47E781B28E7CE9A00550703 /* HttpErrorModels.swift */,
 				E47E781D28E7CEB300550703 /* ResponseDataModel.swift */,
+				E47E782128E7CF7900550703 /* DataManager.swift */,
+				E47E782528E7CFB800550703 /* UserDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +199,7 @@
 				E40F7B5428E74601001A31BB /* AlertConstants.swift */,
 				E40F7B5628E7476D001A31BB /* APIConstants.swift */,
 				E47E781628E7CDD300550703 /* UserDataConstants.swift */,
+				E47E782328E7CF9800550703 /* StringUtilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E47E781928E7CE6200550703 /* NetworkServices.swift */,
+				E47E781F28E7CF5000550703 /* ServiceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -325,11 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47E782628E7CFB800550703 /* UserDataModel.swift in Sources */,
 				E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */,
 				E47E781C28E7CE9A00550703 /* HttpErrorModels.swift in Sources */,
 				E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */,
 				E4704FB728E27D15000A0B75 /* ColorExtensions.swift in Sources */,
 				E47E781E28E7CEB300550703 /* ResponseDataModel.swift in Sources */,
+				E47E782028E7CF5000550703 /* ServiceManager.swift in Sources */,
 				E4CD531528E5229D000489E7 /* ConvertCurrencyViewController.swift in Sources */,
 				E4FEB58F28E356A70010E7E3 /* UIViewController.swift in Sources */,
 				E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */,
@@ -340,9 +354,11 @@
 				E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */,
 				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E47E781A28E7CE6200550703 /* NetworkServices.swift in Sources */,
+				E47E782428E7CF9800550703 /* StringUtilities.swift in Sources */,
 				E40F7B5128E72B55001A31BB /* ViewBorderAndCornerCreator.swift in Sources */,
 				E40F7B5728E7476D001A31BB /* APIConstants.swift in Sources */,
 				E4704FB328E27AFC000A0B75 /* ColorConstants.swift in Sources */,
+				E47E782228E7CF7900550703 /* DataManager.swift in Sources */,
 				E40F7B5528E74601001A31BB /* AlertConstants.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,
 			);
