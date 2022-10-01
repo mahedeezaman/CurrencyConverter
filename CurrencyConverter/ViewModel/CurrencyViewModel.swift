@@ -9,7 +9,10 @@ import Foundation
 
 class CurrencyViewModel: ObservableObject {
     var currencyData = CurrencyDataModel()
-    @Published var userData : UserDataModel
+    var userData : UserDataModel
+    
+    var userDataRequest: UserDataModel
+    var commissionAmount: Double
     
     var commissionManager : CommissionManager
     var dataManager : DataManager
@@ -21,25 +24,29 @@ class CurrencyViewModel: ObservableObject {
         self.commissionManager = tempCommissionManager
         self.dataManager = tempDataManager
         self.userData = tempDataManager.getUserData()
+        self.userDataRequest = tempDataManager.getUserData()
+        self.commissionAmount = 0.0
     }
     
     func sendConversionRequest() {
-        if Double(userData.accountBalances[currencyData.fromCurrency]!)! < Double(currencyData.fromAmount)! {
-            print(CurrencyConversionErrorModels.insufficientAmount.getRawValue())
-            return
-        }
+        userDataRequest = userData
         commissionManager.checkTransactionValidity(requestedData: currencyData, availabilityData: userData) { commissionAmount, error in
             if let error {
-                print(error.getRawValue())
+                NotificationCenter.default.post(name: .alertNotification, object: AlertDataModel(title: AlertConstants.error, message: error.getRawValue()))
             } else if let commissionAmount {
                 Task {
                     let afterConversion = await self.dataManager.convertCurrency(from: self.currencyData.fromCurrency, to: self.currencyData.toCurrency, of: StringUtilities.convertStringToDouble(data: self.currencyData.fromAmount), withCommission: commissionAmount)
-                    DispatchQueue.main.async {
-                        self.userData = afterConversion
-                        print(self.userData)
-                    }
+                    self.userDataRequest = afterConversion
+                    self.commissionAmount = commissionAmount
+                    NotificationCenter.default.post(name: .sellValueNotification, object: afterConversion.accountBalances[self.currencyData.toCurrency])
                 }
             }
         }
+    }
+    
+    func confirmConversionRequest() {
+        self.userData = self.userDataRequest
+        self.commissionAmount = 0.0
+        NotificationCenter.default.post(name: .alertNotification, object: AlertDataModel(title: AlertConstants.success, message: AlertConstants.conversionSuccess(data: self.currencyData, commissionFee: self.commissionAmount)))
     }
 }

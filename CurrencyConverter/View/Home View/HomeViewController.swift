@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
         setupColor()
         setupBorders()
         setupMainConainterView()
+        setupObserver()
         
         sellAmount.text = currencyVM.currencyData.fromAmount
         buyAmount.text = currencyVM.currencyData.toAmount

@@ -14,7 +14,7 @@ extension HomeViewController: AmountEntered {
             sellAmount.text = ""
         } else {
             currencyVM.currencyData.fromAmount = amount
-            sellAmount.text = currencyVM.currencyData.fromAmount
+            sellAmount.text = amount
         }
     }
 }
