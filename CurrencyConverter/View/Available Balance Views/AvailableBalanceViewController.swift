@@ -12,7 +12,7 @@ protocol TappedOnCurrency: AnyObject {
 }
 
 class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var dummyData : [String : String] = [:]
+    var availableCurrencyData : [String : String] = [:]
     
     @IBOutlet weak var balanceTableView: UITableView!
     weak var tappedCurrencyDelegate : TappedOnCurrency?
@@ -31,12 +31,12 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyData.count
+        return availableCurrencyData.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index = dummyData.index(dummyData.startIndex, offsetBy: indexPath.row)
-        tappedCurrencyDelegate?.tappedCurrency(dummyData.keys[index], having: dummyData.values[index])
+        let index = availableCurrencyData.index(availableCurrencyData.startIndex, offsetBy: indexPath.row)
+        tappedCurrencyDelegate?.tappedCurrency(availableCurrencyData.keys[index], having: availableCurrencyData.values[index])
         balanceTableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -45,13 +45,13 @@ class AvailableBalanceViewController: UIViewController, UITableViewDelegate, UIT
             return UITableViewCell()
         }
         
-        let index = dummyData.index(dummyData.startIndex, offsetBy: indexPath.row)
+        let index = availableCurrencyData.index(availableCurrencyData.startIndex, offsetBy: indexPath.row)
         
         cell.backgroundColor = .clear
         cell.cellViewContainer.backgroundColor = ColorConstants.homeViewBackground
         
-        cell.currencyLabel.text = dummyData.keys[index]
-        cell.amountLabel.text = dummyData.values[index]
+        cell.currencyLabel.text = availableCurrencyData.keys[index]
+        cell.amountLabel.text = availableCurrencyData.values[index]
         cell.cellViewContainer.layer.cornerRadius = cell.cellViewContainer.frame.height/2
         
         return cell

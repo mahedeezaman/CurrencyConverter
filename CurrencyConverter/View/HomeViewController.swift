@@ -8,13 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @Published var dummyData = [
-        "EUR" : "1000.0",
-        "USD" : "0.0",
-        "JPY" : "0.0"
-    ]
-    var buyAmountVar = "0.0"
-    var sellAmountVar = "0.0"
+    var currencyVM = CurrencyViewModel()
     var forSell = true
     
     let balanceViewController : AvailableBalanceViewController = {
@@ -33,7 +27,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var homeViewTopLabel: UILabel!
     
-    
     @IBOutlet weak var sellAmountContainer: UIView!
     @IBOutlet weak var sellAmount: UILabel!
     @IBOutlet weak var sellIcon: UIImageView!
@@ -50,8 +43,8 @@ class HomeViewController: UIViewController {
         setupBorders()
         setupMainConainterView()
         
-        sellAmount.text = sellAmountVar
-        buyAmount.text = buyAmountVar
+        sellAmount.text = currencyVM.currencyData.fromAmount
+        buyAmount.text = currencyVM.currencyData.toAmount
         mainContainerView.bringSubviewToFront(convertCurrencyViewController.view)
     }
     
@@ -73,7 +66,7 @@ class HomeViewController: UIViewController {
         mainContainerView.layer.cornerRadius = Constants.cornerRadius
         mainContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        balanceViewController.dummyData = dummyData
+        balanceViewController.availableCurrencyData = currencyVM.userData.accountBalances
         balanceViewController.tappedCurrencyDelegate = self
         addChild(balanceViewController)
         mainContainerView.addSubview(balanceViewController.view)
@@ -87,18 +80,18 @@ class HomeViewController: UIViewController {
     
     @IBAction func sellcurrencyTapped(_ sender: UIButton) {
         forSell = true
-        var newDummyData = dummyData
-        newDummyData.removeValue(forKey: buyCurrency.titleLabel?.text ?? "")
-        balanceViewController.dummyData = newDummyData
+        var newAccountBalances = currencyVM.userData.accountBalances
+        newAccountBalances.removeValue(forKey: buyCurrency.titleLabel?.text ?? "")
+        balanceViewController.availableCurrencyData = newAccountBalances
         balanceViewController.balanceTableView.reloadData()
         mainContainerView.bringSubviewToFront(balanceViewController.view)
     }
     
     @IBAction func buyCurrencyTapped(_ sender: UIButton) {
         forSell = false
-        var newDummyData = dummyData
-        newDummyData.removeValue(forKey: sellCurrency.titleLabel?.text ?? "")
-        balanceViewController.dummyData = newDummyData
+        var newAccountBalances = currencyVM.userData.accountBalances
+        newAccountBalances.removeValue(forKey: sellCurrency.titleLabel?.text ?? "")
+        balanceViewController.availableCurrencyData = newAccountBalances
         balanceViewController.balanceTableView.reloadData()
         mainContainerView.bringSubviewToFront(balanceViewController.view)
     }
@@ -126,7 +119,7 @@ extension HomeViewController : TappedOnCurrency {
 
 extension HomeViewController: AmountEntered {
     func typedAmount(amount: String) {
-        sellAmountVar = amount
-        sellAmount.text = sellAmountVar
+        currencyVM.currencyData.toAmount = amount
+        sellAmount.text = currencyVM.currencyData.toAmount
     }
 }

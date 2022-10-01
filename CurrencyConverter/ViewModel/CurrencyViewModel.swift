@@ -8,15 +8,16 @@
 import Foundation
 
 class CurrencyViewModel: ObservableObject {
-    @Published var currencyData = CurrencyDataModel() {
-        didSet {
-            if StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > StringUtilities.convertStringToDouble(data: userData.accountBalances[currencyData.fromCurrency]) {
-                DispatchQueue.main.async {
-                    self.currencyData.fromAmount = oldValue.fromAmount
-                }
-            }
-        }
-    }
+    @Published var currencyData = CurrencyDataModel()
+//    {
+//        didSet {
+//            if StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > StringUtilities.convertStringToDouble(data: userData.accountBalances[currencyData.fromCurrency]) {
+//                DispatchQueue.main.async {
+//                    self.currencyData.fromAmount = oldValue.fromAmount
+//                }
+//            }
+//        }
+//    }
     @Published var userData : UserDataModel
     
     var commissionManager : CommissionManager
