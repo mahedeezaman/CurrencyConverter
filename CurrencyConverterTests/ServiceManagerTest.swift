@@ -1,5 +1,5 @@
 //
-//  NetworkServicesTest.swift
+//  ServiceManagerTest.swift
 //  CurrencyConverterTests
 //
 //  Created by Mahedee Zaman on 02/10/2022.
@@ -8,8 +8,8 @@
 import XCTest
 @testable import CurrencyConverter
 
-final class NetworkServicesTest : XCTest {
-    var sut = NetworkService()
+final class ServiceManagerTest : XCTest {
+    var sut = ServiceManager()
     
     func getDataModel() -> CurrencyDataModel {
         return CurrencyDataModel(fromAmount: "10", fromCurrency: "EUR", toAmount: "10", toCurrency: "USD")
@@ -17,7 +17,7 @@ final class NetworkServicesTest : XCTest {
     
     func test_network_call_to_convert_data() async {
         do {
-            let response = try await sut.getConvertedData(requestData: getDataModel())
+            let response = try await sut.networkService.getConvertedData(requestData: getDataModel())
             XCTAssertNotNil(response)
         } catch {
             XCTAssertThrowsError(ErrorModels.serverError)
@@ -28,7 +28,7 @@ final class NetworkServicesTest : XCTest {
         do {
             var data = getDataModel()
             data.fromAmount = ""
-            let response = try await sut.getConvertedData(requestData: data)
+            let response = try await sut.networkService.getConvertedData(requestData: data)
             XCTAssertNil(response)
         } catch {
             XCTAssertThrowsError(ErrorModels.serverError)
@@ -39,7 +39,7 @@ final class NetworkServicesTest : XCTest {
         do {
             var data = getDataModel()
             data.fromCurrency = ""
-            let response = try await sut.getConvertedData(requestData: data)
+            let response = try await sut.networkService.getConvertedData(requestData: data)
             XCTAssertNil(response)
         } catch {
             XCTAssertThrowsError(ErrorModels.serverError)
@@ -50,10 +50,14 @@ final class NetworkServicesTest : XCTest {
         do {
             var data = getDataModel()
             data.toCurrency = ""
-            let response = try await sut.getConvertedData(requestData: data)
+            let response = try await sut.networkService.getConvertedData(requestData: data)
             XCTAssertNil(response)
         } catch {
             XCTAssertThrowsError(ErrorModels.serverError)
         }
+    }
+    
+    func test_storage_fetch() {
+        XCTAssertNotNil(sut.getUserData())
     }
 }
