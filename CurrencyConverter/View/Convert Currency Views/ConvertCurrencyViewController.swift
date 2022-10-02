@@ -15,21 +15,6 @@ class ConvertCurrencyViewController: UIViewController {
     var availableBalance = "0.0"
     var currencyData = CurrencyDataModel() {
         didSet {
-            let numberOnlyFilter = currencyData.fromAmount.filter { $0.isNumber || $0 == "." }
-            if currencyData.fromAmount != numberOnlyFilter {
-                DispatchQueue.main.async {[weak self] in
-                    self?.currencyData.fromAmount = numberOnlyFilter
-                    self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
-                }
-            }
-            
-            if Double(currencyData.fromAmount) ?? 0 > 9999999 {
-                DispatchQueue.main.async {[weak self] in
-                    self?.currencyData.fromAmount = oldValue.fromAmount
-                    self?.amountEnteredDelegate?.typedAmount(amount: self?.currencyData.fromAmount ?? oldValue.fromAmount)
-                }
-            }
-            
             if let dotIndexFirst = currencyData.fromAmount.firstIndex(of: "."), let dotIndexLast = currencyData.fromAmount.lastIndex(of: ".") {
                 if currencyData.fromAmount.distance(from: dotIndexFirst, to: currencyData.fromAmount.endIndex) - 1 > 2 {
                     DispatchQueue.main.async {[weak self] in
@@ -73,37 +58,17 @@ class ConvertCurrencyViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        guard StringUtilities.convertStringToDouble(data: currencyData.fromAmount) > 0.0 else {
-            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.amountCantBeZero))
-            self.present(alertController, animated: true, completion: nil)
-            return
+        if AlertViewModel.submitButtonValidator(currencyData: currencyData) {
+            self.amountEnteredDelegate?.typedAmount(amount: AlertConstants.submit)
         }
-        
-        guard StringUtilities.convertStringToDouble(data: currencyData.toAmount) > 0.0 else {
-            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.convertedAmountCantBeZero))
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
-        
-        self.amountEnteredDelegate?.typedAmount(amount: AlertConstants.submit)
     }
     
     
     @IBAction func dialpadAdded(_ sender: UIButton) {
-        guard !currencyData.fromCurrency.isEmpty else {
-            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.selectToConvertFrom))
-            self.present(alertController, animated: true, completion: nil)
-            return
+        if AlertViewModel.dialpadTappedValidator(currencyData: currencyData) {
+            currencyData.fromAmount += sender.titleLabel?.text ?? ""
+            self.amountEnteredDelegate?.typedAmount(amount: currencyData.fromAmount)
         }
-        
-        guard !currencyData.toCurrency.isEmpty else {
-            let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.selectToConvertTo))
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
-        
-        currencyData.fromAmount += sender.titleLabel?.text ?? ""
-        self.amountEnteredDelegate?.typedAmount(amount: currencyData.fromAmount)
     }
     
     @IBAction func dialpadDeleted(_ sender: UIButton) {

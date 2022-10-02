@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CurrencyViewModel: ObservableObject {
+class CurrencyViewModel {
     var currencyData = CurrencyDataModel()
     var userData : UserDataModel
     
