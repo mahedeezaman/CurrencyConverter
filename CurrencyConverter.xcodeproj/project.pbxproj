@@ -26,6 +26,7 @@
 		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
 		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
 		E45D8E8728E3E3FF008C87CC /* AvailableBalanceCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */; };
+		E461053728EA090E00993497 /* CommissionManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461053628EA090D00993497 /* CommissionManagerTest.swift */; };
 		E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB528E0BB510034E14E /* AppDelegate.swift */; };
 		E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB728E0BB510034E14E /* SceneDelegate.swift */; };
 		E4647FBF28E0BB530034E14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4647FBE28E0BB530034E14E /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
 		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
 		E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceCellViewController.xib; sourceTree = "<group>"; };
+		E461053628EA090D00993497 /* CommissionManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommissionManagerTest.swift; sourceTree = "<group>"; };
 		E4647FB228E0BB510034E14E /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4647FB528E0BB510034E14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4647FB728E0BB510034E14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				E4647FCC28E0BB530034E14E /* CurrencyConverterTests.swift */,
 				E440C81428E96ACD00B5F46D /* ServiceManagerTest.swift */,
 				E440C81628E96E0F00B5F46D /* StringUtilitiesTest.swift */,
+				E461053628EA090D00993497 /* CommissionManagerTest.swift */,
 			);
 			path = CurrencyConverterTests;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			files = (
 				E440C81528E96ACD00B5F46D /* ServiceManagerTest.swift in Sources */,
 				E440C81728E96E0F00B5F46D /* StringUtilitiesTest.swift in Sources */,
+				E461053728EA090E00993497 /* CommissionManagerTest.swift in Sources */,
 				E4647FCD28E0BB530034E14E /* CurrencyConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

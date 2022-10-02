@@ -12,7 +12,7 @@ protocol CommissionProtocol {
 }
 
 class CommissionManager {
-    var commissionProtocols = [CommissionProtocol]()
+    private var commissionProtocols = [CommissionProtocol]()
     
     private func validityChecker(requestedData: CurrencyDataModel, availabilityData: UserDataModel, commissionProtocol: CommissionProtocol, completionHandler: @escaping (Double?, CurrencyConversionErrorModels?) -> ()) {
         
@@ -26,7 +26,7 @@ class CommissionManager {
         }
     }
     
-    func checkTransactionValidity(requestedData: CurrencyDataModel, availabilityData: UserDataModel,  completionHandler: @escaping (Double?, CurrencyConversionErrorModels?) -> ()){
+    func checkTransactionValidity(requestedData: CurrencyDataModel, availabilityData: UserDataModel, completionHandler: @escaping (Double?, CurrencyConversionErrorModels?) -> ()){
         
         var totalCommission = 0.0
         var validationError : CurrencyConversionErrorModels? = nil
