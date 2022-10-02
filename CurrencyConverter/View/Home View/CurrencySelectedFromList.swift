@@ -11,6 +11,8 @@ extension HomeViewController : TappedOnCurrency {
     func resetAmount() {
         convertCurrController.currencyData.fromAmount = ""
         convertCurrController.currencyData.toAmount = ""
+        currencyVM.currencyData.fromAmount = ""
+        currencyVM.currencyData.toAmount = ""
         DispatchQueue.main.async {[weak self] in
             self?.buyAmount.text = ""
             self?.sellAmount.text = ""
