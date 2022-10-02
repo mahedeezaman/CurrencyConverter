@@ -20,6 +20,8 @@
 		E43E157D28E814D700D9FBBB /* AmountEnteredToConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */; };
 		E43E157F28E814FC00D9FBBB /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157E28E814FC00D9FBBB /* NotificationListener.swift */; };
 		E440C81328E9506900B5F46D /* UserDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440C81228E9506900B5F46D /* UserDatabaseModel.swift */; };
+		E440C81528E96ACD00B5F46D /* NetworkServicesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440C81428E96ACD00B5F46D /* NetworkServicesTest.swift */; };
+		E440C81728E96E0F00B5F46D /* StringUtilitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440C81628E96E0F00B5F46D /* StringUtilitiesTest.swift */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
 		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
 		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
@@ -82,6 +84,8 @@
 		E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountEnteredToConvert.swift; sourceTree = "<group>"; };
 		E43E157E28E814FC00D9FBBB /* NotificationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
 		E440C81228E9506900B5F46D /* UserDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseModel.swift; sourceTree = "<group>"; };
+		E440C81428E96ACD00B5F46D /* NetworkServicesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicesTest.swift; sourceTree = "<group>"; };
+		E440C81628E96E0F00B5F46D /* StringUtilitiesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilitiesTest.swift; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
 		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
 		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				E4647FCC28E0BB530034E14E /* CurrencyConverterTests.swift */,
+				E440C81428E96ACD00B5F46D /* NetworkServicesTest.swift */,
+				E440C81628E96E0F00B5F46D /* StringUtilitiesTest.swift */,
 			);
 			path = CurrencyConverterTests;
 			sourceTree = "<group>";
@@ -535,6 +541,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E440C81528E96ACD00B5F46D /* NetworkServicesTest.swift in Sources */,
+				E440C81728E96E0F00B5F46D /* StringUtilitiesTest.swift in Sources */,
 				E4647FCD28E0BB530034E14E /* CurrencyConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
