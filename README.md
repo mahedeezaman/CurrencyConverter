@@ -9,3 +9,13 @@ For design pattern, MVVM should be used and also SOLID architecture would be a m
 ![Presentation1](https://user-images.githubusercontent.com/51700181/191883862-c1ae04a2-bbc8-4c97-ac52-9d0745c28970.jpg)
 
 # Solution overview
+1. For Views - For the color combination, I used (https://www.canva.com/learn/100-color-combinations/) this link. For the UI design, I could have implemented alert taost instead of alerts. The reason why alert toast is better in some cases is, user have to tap on the app less which is better for user experience. However, overall 7-8 hours have been spent in views.
+At this project, I really wanted to show my skills/knowledge set of different approaches. So I used 
+1. async/await in API calls
+2. closure completion of data fetching
+3. protocol delegate as well as notification observer for data communication. 
+4. generic classes to reuse code. 
+5. maintained SOLID, clean architecture. So adding new feature wont break the code entirely
+6. For design pattern, I followed MVVM. 
+
+Following one approach throughout the whole app is good practice, but as this project is a reference for my knowledge set, I wanted to use all of them. 
