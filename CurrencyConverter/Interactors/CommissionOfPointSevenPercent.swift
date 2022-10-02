@@ -9,9 +9,6 @@ import Foundation
 
 class CommissionOfPointSevenPercent: CommissionProtocol {
     func chargedAmount(requestedData: CurrencyDataModel, availabilityData: UserDataModel) -> Result<Double, CurrencyConversionErrorModels> {
-        if availabilityData.apiUseCount < 5 {
-            return .success(0.00)
-        }
         
         let availAmount = StringUtilities.convertStringToDouble(data: availabilityData.accountBalances[requestedData.fromCurrency])
         let convertableAmount = StringUtilities.convertStringToDouble(data: requestedData.fromAmount)

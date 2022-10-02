@@ -28,6 +28,10 @@ class CommissionManager {
     
     func checkTransactionValidity(requestedData: CurrencyDataModel, availabilityData: UserDataModel, completionHandler: @escaping (Double?, CurrencyConversionErrorModels?) -> ()){
         
+        if availabilityData.apiUseCount < 5 {
+            return completionHandler(0.00, nil)
+        }
+        
         var totalCommission = 0.0
         var validationError : CurrencyConversionErrorModels? = nil
         
