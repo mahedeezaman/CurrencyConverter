@@ -9,6 +9,7 @@ import Foundation
 
 class ServiceManager {
     var networkService = NetworkService()
+    var storageService = StorageService()
     
     func convertCurrency(requestData: CurrencyDataModel, completionHandler: @escaping (ResponseDataModel) -> ()) async {
         do {
@@ -17,5 +18,13 @@ class ServiceManager {
         } catch {
             NotificationCenter.default.post(name: .alertNotification, object: AlertDataModel(title: AlertConstants.error, message: error.localizedDescription))
         }
+    }
+    
+    func getUserData() -> UserDataModel {
+        return storageService.getData() ?? UserDataModel(accountBalances: UserDataConstants.initialAmount, apiUseCount: 0)
+    }
+    
+    func saveUserData(userData: UserDataModel) {
+        storageService.saveUserData(userData: userData)
     }
 }

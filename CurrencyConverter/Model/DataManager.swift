@@ -12,7 +12,7 @@ class DataManager {
     var serviceManager = ServiceManager()
     
     init() {
-        userData = UserDataModel(accountBalances: UserDataConstants.initialAmount, apiUseCount: 0)
+        userData = serviceManager.getUserData()
     }
     
     func getUserData() -> UserDataModel {
@@ -21,6 +21,7 @@ class DataManager {
     
     func saveUserData(userData: UserDataModel) {
         self.userData = userData
+        serviceManager.saveUserData(userData: userData)
     }
     
     func convertCurrency(from fromCurrency: String, to toCurrency: String, of amount: Double, withCommission: Double) async -> UserDataModel {

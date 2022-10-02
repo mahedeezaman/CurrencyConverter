@@ -19,6 +19,7 @@
 		E43E157B28E814BC00D9FBBB /* CurrencySelectedFromList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157A28E814BC00D9FBBB /* CurrencySelectedFromList.swift */; };
 		E43E157D28E814D700D9FBBB /* AmountEnteredToConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */; };
 		E43E157F28E814FC00D9FBBB /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E157E28E814FC00D9FBBB /* NotificationListener.swift */; };
+		E440C81328E9506900B5F46D /* UserDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440C81228E9506900B5F46D /* UserDatabaseModel.swift */; };
 		E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */; };
 		E45D8E8128E3CAD6008C87CC /* AvailableBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */; };
 		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
@@ -80,6 +81,7 @@
 		E43E157A28E814BC00D9FBBB /* CurrencySelectedFromList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectedFromList.swift; sourceTree = "<group>"; };
 		E43E157C28E814D700D9FBBB /* AmountEnteredToConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountEnteredToConvert.swift; sourceTree = "<group>"; };
 		E43E157E28E814FC00D9FBBB /* NotificationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
+		E440C81228E9506900B5F46D /* UserDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseModel.swift; sourceTree = "<group>"; };
 		E45D8E7E28E3CAD6008C87CC /* AvailableBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceViewController.swift; sourceTree = "<group>"; };
 		E45D8E7F28E3CAD6008C87CC /* AvailableBalanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceViewController.xib; sourceTree = "<group>"; };
 		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				E47E782528E7CFB800550703 /* UserDataModel.swift */,
 				E47E782728E7D01300550703 /* CurrencyConversionErrorModels.swift */,
 				E43E157728E8138500D9FBBB /* AlertDataModel.swift */,
+				E440C81228E9506900B5F46D /* UserDatabaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				E45D8E8028E3CAD6008C87CC /* AvailableBalanceViewController.swift in Sources */,
 				E47E781A28E7CE6200550703 /* NetworkServices.swift in Sources */,
 				E47E783028E7D0BA00550703 /* CurrencyViewModel.swift in Sources */,
+				E440C81328E9506900B5F46D /* UserDatabaseModel.swift in Sources */,
 				E47E782428E7CF9800550703 /* StringUtilities.swift in Sources */,
 				E47E782B28E7D04300550703 /* CommissionManager.swift in Sources */,
 				E40F7B5128E72B55001A31BB /* ViewBorderAndCornerCreator.swift in Sources */,

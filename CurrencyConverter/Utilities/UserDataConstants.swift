@@ -13,4 +13,5 @@ struct UserDataConstants {
         "EUR" : "1000.00",
         "JPY" : "0.00"
     ]
+    static let initialApiCallCount = 0
 }
