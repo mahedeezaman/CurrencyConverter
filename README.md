@@ -6,7 +6,7 @@ This is a very simple app which would show account balances of different currenc
 
 # Architecure
 For design pattern, ```MVVM``` should be used and also ```SOLID architecture``` would be a must as we need to create scope for future requirements. Here is a top level view of the architecture 
-![Presentation1](https://user-images.githubusercontent.com/51700181/191883862-c1ae04a2-bbc8-4c97-ac52-9d0745c28970.jpg)
+![Architecture](https://user-images.githubusercontent.com/51700181/193473657-21ba643e-e18a-4406-954c-cd25904c33e3.JPG)
 
 # Solution overview
 At this project, I really wanted to show my skills/knowledge set of different approaches. So I used 
