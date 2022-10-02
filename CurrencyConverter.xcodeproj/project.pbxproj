@@ -27,6 +27,7 @@
 		E45D8E8628E3E3FF008C87CC /* AvailableBalanceCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */; };
 		E45D8E8728E3E3FF008C87CC /* AvailableBalanceCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */; };
 		E46028DE28EA129200E4AD77 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46028DD28EA129200E4AD77 /* AlertViewModel.swift */; };
+		E46028E028EA153800E4AD77 /* AlertManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46028DF28EA153800E4AD77 /* AlertManagerTest.swift */; };
 		E461053728EA090E00993497 /* CommissionManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461053628EA090D00993497 /* CommissionManagerTest.swift */; };
 		E4647FB628E0BB510034E14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB528E0BB510034E14E /* AppDelegate.swift */; };
 		E4647FB828E0BB510034E14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4647FB728E0BB510034E14E /* SceneDelegate.swift */; };
@@ -92,6 +93,7 @@
 		E45D8E8428E3E3FF008C87CC /* AvailableBalanceCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBalanceCellViewController.swift; sourceTree = "<group>"; };
 		E45D8E8528E3E3FF008C87CC /* AvailableBalanceCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableBalanceCellViewController.xib; sourceTree = "<group>"; };
 		E46028DD28EA129200E4AD77 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		E46028DF28EA153800E4AD77 /* AlertManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerTest.swift; sourceTree = "<group>"; };
 		E461053628EA090D00993497 /* CommissionManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommissionManagerTest.swift; sourceTree = "<group>"; };
 		E4647FB228E0BB510034E14E /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4647FB528E0BB510034E14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				E440C81428E96ACD00B5F46D /* ServiceManagerTest.swift */,
 				E440C81628E96E0F00B5F46D /* StringUtilitiesTest.swift */,
 				E461053628EA090D00993497 /* CommissionManagerTest.swift */,
+				E46028DF28EA153800E4AD77 /* AlertManagerTest.swift */,
 			);
 			path = CurrencyConverterTests;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46028E028EA153800E4AD77 /* AlertManagerTest.swift in Sources */,
 				E440C81528E96ACD00B5F46D /* ServiceManagerTest.swift in Sources */,
 				E440C81728E96E0F00B5F46D /* StringUtilitiesTest.swift in Sources */,
 				E461053728EA090E00993497 /* CommissionManagerTest.swift in Sources */,

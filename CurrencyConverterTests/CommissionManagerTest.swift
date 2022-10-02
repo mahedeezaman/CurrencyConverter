@@ -20,10 +20,7 @@ final class CommissionManagerTest: XCTestCase {
     }
     
     func test_checkTransactionValidity_before_five_transactions_no_charge() {
-        let requestedData = getRequestedData()
-        let currency = getCurrencyData()
-        
-        sut.checkTransactionValidity(requestedData: currency, availabilityData: requestedData) { response, error in
+        sut.checkTransactionValidity(requestedData: getCurrencyData(), availabilityData: getRequestedData()) { response, error in
             XCTAssertEqual(response, 0.0)
             XCTAssertNil(error)
         }
@@ -31,7 +28,7 @@ final class CommissionManagerTest: XCTestCase {
     
     func test_checkTransactionValidity_after_five_transactions_with_charge() {
         var requestedData = getRequestedData()
-        var currency = getCurrencyData()
+        let currency = getCurrencyData()
         requestedData.apiUseCount = 6
         
         let convertableAmount = StringUtilities.convertStringToDouble(data: currency.fromAmount)
