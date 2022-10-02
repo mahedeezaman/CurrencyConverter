@@ -10,6 +10,7 @@ import Foundation
 extension HomeViewController: AmountEntered {
     func resetAll() {
         convertCurrController.currencyData = CurrencyDataModel()
+        currencyVM.currencyData = CurrencyDataModel()
         DispatchQueue.main.async {[weak self] in
             self?.sellAmount.text = ""
             self?.buyAmount.text = ""
