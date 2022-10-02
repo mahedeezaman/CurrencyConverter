@@ -35,4 +35,13 @@ class AlertViewModel {
         
         return true
     }
+    
+    static func tappedCurrencyValidator(amount: String) -> Bool {
+        guard let availAmount = Double(amount), availAmount > 0 else {
+            NotificationCenter.default.post(name: .alertNotification, object: AlertDataModel(title: AlertConstants.error, message: AlertConstants.insufficientBalance))
+            return false
+        }
+        
+        return true
+    }
 }

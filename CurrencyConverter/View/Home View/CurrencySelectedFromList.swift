@@ -21,16 +21,13 @@ extension HomeViewController : TappedOnCurrency {
     
     func tappedCurrency(_ currency: String, having amount: String) {
         if forSell {
-            guard let availAmount = Double(amount), availAmount > 0 else {
-                let alertController = self.showAlertWith(alertData: AlertDataModel(title: AlertConstants.error, message: AlertConstants.insufficientBalance))
-                self.present(alertController, animated: true, completion: nil)
-                return
+            if AlertViewModel.tappedCurrencyValidator(amount: amount) {
+                sellCurrency.setTitle(currency, for: .normal)
+                resetAmount()
+                convertCurrController.currencyData.fromCurrency = currency
+                convertCurrController.availableBalance = amount
+                currencyVM.currencyData.fromCurrency = currency
             }
-            sellCurrency.setTitle(currency, for: .normal)
-            resetAmount()
-            convertCurrController.currencyData.fromCurrency = currency
-            convertCurrController.availableBalance = amount
-            currencyVM.currencyData.fromCurrency = currency
         } else {
             buyCurrency.setTitle(currency, for: .normal)
             convertCurrController.currencyData.toCurrency = currency
