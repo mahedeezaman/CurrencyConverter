@@ -43,6 +43,7 @@
 		E47E782B28E7D04300550703 /* CommissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E782A28E7D04300550703 /* CommissionManager.swift */; };
 		E47E782D28E7D06100550703 /* CommissionOfPointSevenPercent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E782C28E7D06100550703 /* CommissionOfPointSevenPercent.swift */; };
 		E47E783028E7D0BA00550703 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E782F28E7D0BA00550703 /* CurrencyViewModel.swift */; };
+		E481AB7B28E9215500853E21 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481AB7A28E9215500853E21 /* StorageService.swift */; };
 		E4C027FD28E6CD4800600685 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */; };
 		E4CD531128E51F4B000489E7 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */; };
 		E4CD531528E5229D000489E7 /* ConvertCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */; };
@@ -106,6 +107,7 @@
 		E47E782A28E7D04300550703 /* CommissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommissionManager.swift; sourceTree = "<group>"; };
 		E47E782C28E7D06100550703 /* CommissionOfPointSevenPercent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommissionOfPointSevenPercent.swift; sourceTree = "<group>"; };
 		E47E782F28E7D0BA00550703 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		E481AB7A28E9215500853E21 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		E4C027FC28E6CD4800600685 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		E4CD531028E51F4B000489E7 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		E4CD531328E5229D000489E7 /* ConvertCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +143,6 @@
 				CC8959780AB0900EADA9A85C /* Pods-CurrencyConverterTests.debug.xcconfig */,
 				A12CE59A6B29C32F428BFB35 /* Pods-CurrencyConverterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -287,6 +288,7 @@
 			children = (
 				E47E781928E7CE6200550703 /* NetworkServices.swift */,
 				E47E781F28E7CF5000550703 /* ServiceManager.swift */,
+				E481AB7A28E9215500853E21 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -517,6 +519,7 @@
 				E47E782D28E7D06100550703 /* CommissionOfPointSevenPercent.swift in Sources */,
 				E47E782228E7CF7900550703 /* DataManager.swift in Sources */,
 				E40F7B5528E74601001A31BB /* AlertConstants.swift in Sources */,
+				E481AB7B28E9215500853E21 /* StorageService.swift in Sources */,
 				E43E157628E8121200D9FBBB /* NotificationNameExtensions.swift in Sources */,
 				E43E157B28E814BC00D9FBBB /* CurrencySelectedFromList.swift in Sources */,
 				E4704FB928E280ED000A0B75 /* Constants.swift in Sources */,
