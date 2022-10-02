@@ -4,6 +4,17 @@ This is a very simple app which would show account balances of different currenc
 2. The application supports only ```EUR, USD, JPY``` currencies and initial state should be ```1000.00 EUR, 0.00 USD, 0 JPY```.
 3. There is a possibility of expanding the calculation of a more flexible commission. It is possible to come up with various new rules, for example - every tenth conversion is free, conversion of up to 200 Euros is free of charge etc.
 
+# Requirements to run the project
+In the whole app, ```only one third party library (Realm) is used which is installed via cocoaPods```. to run the project,
+1. Go to project directory
+2. Run these following commands one by one -
+```
+sudo gem install cocoapods
+pod init
+pod install
+```
+3. Open the .xcframework file and run the project in any device having iOS 13+
+
 # Architecure
 For design pattern, ```MVVM``` should be used and also ```SOLID architecture``` would be a must as we need to create scope for future requirements. Here is a top level view of the architecture 
 ![Architecture](https://user-images.githubusercontent.com/51700181/193473657-21ba643e-e18a-4406-954c-cd25904c33e3.JPG)
@@ -31,7 +42,7 @@ Following one approach throughout the whole app is good practice, but as this pr
 
 5. For CommissionManager - As feature might be added in near future, I implemented the class accordingly. Here, commissionManagers responsibility is to check if the user have enough balance to convert the currency and also bear the fees.
 
-It took around ```3 working days (24 hours)``` for me to complete this project. App supports ```iOS13 with iPhone (Portrait), iPad(Both)```. In the whole app, ```only one third party library (Realm) is used```. Also ```Priority given for separation of concern and Test Code is written for all the Manager class```
+It took around ```3 working days (24 hours)``` for me to complete this project. App supports ```iOS13 with iPhone (Portrait), iPad(Both)```. Also ```Priority given for separation of concern and Test Code is written for all the Manager class```
 
 # App workflow overview
 After the app comes to foreground, ViewModel asks model to provide data models. Model then communicate with storageManager. StorageManager checks if any data already exists in the database. If not, creates a new database with project required initializer and sends it back to model. ViewModel then injects the data to View. Views responsibility is to take the input from user and update the view/pass the data between controllers. All sort of validation responsibility including business logic is taken by ViewModel. After user selects a sellCurrency, buyCurrency and sellAmount, after 1 second API call is requested from view to ViewModel to Model to ServiceManager to NetworkService. The data also passes through the same media. After clicking on submit button, the temporary saved transaction gets permanent and ViewModel asks Model to update the data. Model updates its data and also sends to database to update
