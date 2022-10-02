@@ -8,6 +8,13 @@
 import Foundation
 
 extension HomeViewController : TappedOnCurrency {
+    func resetAmount() {
+        convertCurrController.currencyData.fromAmount = ""
+        convertCurrController.currencyData.toAmount = ""
+        buyAmount.text = ""
+        sellAmount.text = ""
+    }
+    
     func tappedCurrency(_ currency: String, having amount: String) {
         if forSell {
             guard let availAmount = Double(amount), availAmount > 0 else {
@@ -16,6 +23,7 @@ extension HomeViewController : TappedOnCurrency {
                 return
             }
             sellCurrency.setTitle(currency, for: .normal)
+            resetAmount()
             convertCurrController.currencyData.fromCurrency = currency
             convertCurrController.availableBalance = amount
             currencyVM.currencyData.fromCurrency = currency

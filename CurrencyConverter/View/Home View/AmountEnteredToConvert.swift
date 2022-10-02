@@ -8,13 +8,18 @@
 import Foundation
 
 extension HomeViewController: AmountEntered {
+    func resetAll() {
+        convertCurrController.currencyData = CurrencyDataModel()
+        sellAmount.text = ""
+        buyAmount.text = ""
+        buyCurrency.setTitle("...", for: .normal)
+        sellCurrency.setTitle("...", for: .normal)
+    }
+    
     func typedAmount(amount: String) {
         if amount == AlertConstants.submit {
             currencyVM.confirmConversionRequest()
-            sellAmount.text = ""
-            buyAmount.text = ""
-            buyCurrency.setTitle("...", for: .normal)
-            sellCurrency.setTitle("...", for: .normal)
+            resetAll()
         } else {
             currencyVM.currencyData.fromAmount = amount
             sellAmount.text = amount
