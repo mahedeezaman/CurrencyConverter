@@ -42,7 +42,7 @@ class CurrencyViewModel: ObservableObject {
                     
                     let convertedTo = StringUtilities.convertStringToDouble(data: afterConversion.accountBalances[self.currencyData.toCurrency])
                     let previousTo = StringUtilities.convertStringToDouble(data: self.userData.accountBalances[self.currencyData.toCurrency])
-                    self.userDataRequest?.accountBalances[self.currencyData.toCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: previousTo + convertedTo))"
+                    self.userDataRequest?.accountBalances[self.currencyData.toCurrency] = "\(StringUtilities.roundUpDoubleToString(data: previousTo + convertedTo))"
                     
                     self.currencyData.toAmount = "\(convertedTo)"
                     NotificationCenter.default.post(name: .sellValueNotification, object: self.currencyData.toAmount)

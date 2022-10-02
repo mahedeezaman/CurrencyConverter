@@ -15,10 +15,10 @@ class CommissionOfPointSevenPercent: CommissionProtocol {
         
         let availAmount = StringUtilities.convertStringToDouble(data: availabilityData.accountBalances[requestedData.fromCurrency])
         let convertableAmount = StringUtilities.convertStringToDouble(data: requestedData.fromAmount)
-        let percentage = StringUtilities.convertStringToDouble(data: StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: availAmount * 0.7 / 100.0))
+        let percentage = StringUtilities.convertStringToDouble(data: StringUtilities.roundUpDoubleToString(data: availAmount * 0.7 / 100.0))
         
         if availAmount - convertableAmount - percentage >= 0.0 {
-            return .success(StringUtilities.convertStringToDouble(data: StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: convertableAmount * 0.7 / 100.0)))
+            return .success(StringUtilities.convertStringToDouble(data: StringUtilities.roundUpDoubleToString(data: convertableAmount * 0.7 / 100.0)))
         } else {
             return .failure(.insufficientAmount)
         }

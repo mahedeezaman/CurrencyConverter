@@ -33,8 +33,8 @@ class DataManager {
             let previousFrom = StringUtilities.convertStringToDouble(data: self.userData.accountBalances[fromCurrency])
             let convertedAmount = StringUtilities.convertStringToDouble(data: response.amount)
             
-            responseData.accountBalances[fromCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: previousFrom - amount - withCommission))"
-            responseData.accountBalances[toCurrency] = "\(StringUtilities.roundUpDoubleToTwoDecimalPlaces(data: convertedAmount))"
+            responseData.accountBalances[fromCurrency] = "\(StringUtilities.roundUpDoubleToString(data: previousFrom - amount - withCommission))"
+            responseData.accountBalances[toCurrency] = "\(StringUtilities.roundUpDoubleToString(data: convertedAmount))"
             responseData.apiUseCount += 1
         }
         
