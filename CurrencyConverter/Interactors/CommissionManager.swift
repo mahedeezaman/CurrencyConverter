@@ -27,16 +27,12 @@ class CommissionManager {
     }
     
     func checkTransactionValidity(requestedData: CurrencyDataModel, availabilityData: UserDataModel, completionHandler: @escaping (Double?, CurrencyConversionErrorModels?) -> ()){
-        
-        if availabilityData.apiUseCount < 5 {
-            return completionHandler(0.00, nil)
-        }
-        
         var totalCommission = 0.0
         var validationError : CurrencyConversionErrorModels? = nil
         
         commissionProtocols.removeAll()
         commissionProtocols.append(CommissionOfPointSevenPercent())
+        commissionProtocols.append(CommissionOfFirstFiveTransaction())
         
         for commissions in commissionProtocols {
             validityChecker(requestedData: requestedData, availabilityData: availabilityData, commissionProtocol: commissions) { amount, error in
@@ -46,10 +42,10 @@ class CommissionManager {
                     totalCommission += amount
                 }
             }
-        }
-        
-        guard validationError == nil else {
-            return completionHandler(nil, validationError)
+            
+            guard validationError == nil else {
+                return validationError == .immunityOfCommission ? completionHandler(0.0, nil) : completionHandler(nil, validationError)
+            }
         }
         
         return completionHandler(totalCommission, nil)
